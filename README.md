@@ -35,7 +35,7 @@
 
 ## Project created 
 #### Checklist: 
-## User entity and resource 
+- User entity and resource 
 ## Basic entity checklist: 
 - Basic attributes 
 - Associations (instantiate collections) 
@@ -51,9 +51,9 @@
 - application-test.properties 
 - Entity: JPA mapping 
 
-### Dependencies: 
-### application.properties: 
-### application-test.properties:
+##### Dependencies
+##### application.properties
+##### application-test.properties
 
 ## JPA repository, dependency injection, database seeding 
 #### Checklist: 
