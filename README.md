@@ -36,6 +36,7 @@
 ## Project created 
 #### Checklist: 
 - User entity and resource 
+
 ## Basic entity checklist: 
 - Basic attributes 
 - Associations (instantiate collections) 
@@ -65,6 +66,7 @@
 
 ### Service layer, component registration 
 ### Order, Instant, ISO 8601 
+
 ## Basic new entity
 #### checklist: 
 - Entity 
