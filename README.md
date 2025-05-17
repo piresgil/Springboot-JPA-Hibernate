@@ -63,9 +63,9 @@
 - Instantiate objects in memory 
 - Persist objects
 
-## Service layer, component registration 
-## Order, Instant, ISO 8601 
-### Basic new entity checklist: 
+### Service layer, component registration 
+### Order, Instant, ISO 8601 
+## Basic new entity checklist: 
 - Entity 
 	- "To many" association, lazy loading, JsonIgnore 
 - Repository 
@@ -73,21 +73,21 @@
 - Service 
 - Resource
 
-## OrderStatus enum 
-## Category
-## Product 
-## Many-to-many association with JoinTable 
-## OrderItem, many-to-many association with extra atributes
-### Checklist: 
+### OrderStatus enum 
+### Category
+### Product 
+### Many-to-many association with JoinTable 
+### OrderItem, many-to-many association with extra atributes
+#### Checklist: 
 - OrderItemPK 
 - OrderItem 
 - Order one-to-many association 
 - Seed
 
-## Product-OrderItem one-to-many association 
-## Payment, one-to-one association 
-## Subtotal & Total methods 
-## User insert
+### Product-OrderItem one-to-many association 
+### Payment, one-to-one association 
+### Subtotal & Total methods 
+### User insert
 #### Checklist: 
 - UserService 
 - UserResource
