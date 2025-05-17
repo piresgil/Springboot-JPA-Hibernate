@@ -76,21 +76,22 @@
 - Service 
 - Resource
 
-### OrderStatus enum 
-### Category
-### Product 
-### Many-to-many association with JoinTable 
-### OrderItem, many-to-many association with extra atributes
+## OrderStatus enum 
+## Category
+## Product 
+## Many-to-many association with JoinTable 
+## OrderItem, many-to-many association with extra atributes
 #### Checklist: 
 - OrderItemPK 
 - OrderItem 
 - Order one-to-many association 
 - Seed
 
-### Product-OrderItem one-to-many association 
-### Payment, one-to-one association 
-### Subtotal & Total methods 
-### User insert
+## Product-OrderItem one-to-many association 
+## Payment, one-to-one association 
+## Subtotal & Total methods 
+
+## User insert
 #### Checklist: 
 - UserService 
 - UserResource
