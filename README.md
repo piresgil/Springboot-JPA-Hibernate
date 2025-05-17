@@ -9,6 +9,8 @@
 
 # Spring Boot e JPA / Hibernate
 
+Pequeno sistema Web Spring Boot/Maven, com persistência no baco de dados em memória (H2) com o JPA/Hibernate.
+
 ## Objetivos 
 - Criar projeto Spring Boot Java 
 - Implementar modelo de domínio 
