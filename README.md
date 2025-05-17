@@ -9,7 +9,7 @@
 
 # Spring Boot e JPA / Hibernate
 
-##Objetivos 
+## Objetivos 
 - Criar projeto Spring Boot Java 
 - Implementar modelo de domínio 
 - Estruturar camadas lógicas: resource, service, repository 
@@ -35,8 +35,8 @@
 
 ## Project created 
 #### Checklist: 
-##User entity and resource 
-##Basic entity checklist: 
+## User entity and resource 
+## Basic entity checklist: 
 - Basic attributes 
 - Associations (instantiate collections) 
 - Constructors 
@@ -44,8 +44,8 @@
 - hashCode & equals 
 - Serializable 
 
-##H2 database, test profile, JPA 
-####Checklist: 
+## H2 database, test profile, JPA 
+#### Checklist: 
 - JPA & H2 dependencies 
 - application.properties 
 - application-test.properties 
@@ -55,8 +55,8 @@
 ### application.properties: 
 ### application-test.properties:
 
-##JPA repository, dependency injection, database seeding 
-####Checklist: 
+## JPA repository, dependency injection, database seeding 
+#### Checklist: 
 - UserRepository extends JPARepository<User, Long> 
 - Configuration class for "test" profile 
 - @Autowired UserRepository 
@@ -65,7 +65,7 @@
 
 ## Service layer, component registration 
 ## Order, Instant, ISO 8601 
-###Basic new entity checklist: 
+### Basic new entity checklist: 
 - Entity 
 	- "To many" association, lazy loading, JsonIgnore 
 - Repository 
@@ -78,7 +78,7 @@
 ## Product 
 ## Many-to-many association with JoinTable 
 ## OrderItem, many-to-many association with extra atributes
-###Checklist: 
+### Checklist: 
 - OrderItemPK 
 - OrderItem 
 - Order one-to-many association 
@@ -93,7 +93,7 @@
 - UserResource
 
 ## User delete 
-####Checklist: 
+#### Checklist: 
 - UserService 
 - UserResource 
   
@@ -118,6 +118,6 @@
 	- DataIntegrityViolationException 
 
 ## Exception handling - update 
-####Checklist: 
+#### Checklist: 
 - UserService 
 	- EntityNotFoundException
