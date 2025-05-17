@@ -65,7 +65,8 @@
 
 ### Service layer, component registration 
 ### Order, Instant, ISO 8601 
-## Basic new entity checklist: 
+## Basic new entity
+#### checklist: 
 - Entity 
 	- "To many" association, lazy loading, JsonIgnore 
 - Repository 
