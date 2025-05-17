@@ -9,6 +9,8 @@
 
 # Spring Boot e JPA / Hibernate
 
+*** Projeto didático ***
+
 Pequeno sistema Web Spring Boot/Maven, com persistência no baco de dados em memória (H2) com o JPA/Hibernate.
 
 ## Objetivos 
