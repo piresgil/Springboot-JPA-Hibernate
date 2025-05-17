@@ -1,6 +1,6 @@
 ![Plataforma Java MYSQL](https://img.shields.io/badge/Platforms-Java-blue) 
 
-![Bibliotecas](https://img.shields.io/badge/Libraries-Maven%2C%20JPA%2C%20Hibernate%2C%20Xampp-6f42c1)
+![Bibliotecas](https://img.shields.io/badge/Libraries-Maven%2C%20Spring%20Boot%2C%20JPA%2C%20Hibernate%2C%20H2-6f42c1)
  
 
 ![Status](https://img.shields.io/badge/status-estável-brightgreen)
