@@ -13,19 +13,21 @@ import java.util.Set;
 
 /**
  * Class Category
- */
-
-/**
- * @Entity
- * @Table associada a tabela criada na DB
+ * Esta classe representa a entidade "Category" (Categoria) no banco de dados.
+ * Ela é mapeada para a tabela "tb_category".
+ *
+ * @Entity Indica que esta classe é uma entidade JPA.
+ * @Table  Associa esta entidade à tabela "tb_category" no banco de dados.
  */
 @Entity
 @Table(name = "tb_category")
 public class Category implements Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * @Id Chave Primária
-     * @GeneratedValue Gerado auto, segundo estratégia
+     * @GeneratedValue Gerado automaticamente, utilizando a estratégia de identidade (geralmente do banco de dados).
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,22 +35,26 @@ public class Category implements Serializable {
     private String name;
 
     /**
-     * @ManyToMany associação muitas para muitas
+     * @ManyToMany associação muitos-para-muitos (N-N)
      * @JoinTable associada com tabela criada na DB
-     * @JsonIgnore evita o loop de mão dupla (Lazy Loading), um user tem varios orders
-     * por sua ves a order tem um user, isso provoca um loop infinito
+     * @JsonIgnore evita o loop de mão dupla (lazy loading), um user tem varios orders
+     * por sua vez a order tem um user, isso provoca um loop infinito se não ignorarmos.
+     * mappedBy: Especifica o campo na entidade Product que detém a relação.
      */
     @JsonIgnore
-    @ManyToMany(mappedBy = "categories")
+    @ManyToMany(mappedBy = "categories") // Adicionado fetch = FetchType.LAZY
     private Set<Product> products = new HashSet<>();
 
     public Category() {
+        // Construtor padrão necessário para JPA
     }
 
     public Category(Long id, String name) {
         this.id = id;
         this.name = name;
     }
+
+    // Getters e Setters
 
     public Long getId() {
         return id;
@@ -70,8 +76,11 @@ public class Category implements Serializable {
         return products;
     }
 
+    // equals e hashCode baseados no ID para garantir a consistência do JPA e Hibernate
+
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
         return Objects.equals(id, category.id);
@@ -79,6 +88,6 @@ public class Category implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hash(id);
     }
 }

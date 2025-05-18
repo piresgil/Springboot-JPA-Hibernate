@@ -13,19 +13,18 @@ import java.util.Objects;
 
 /**
  * Class User
- */
-
-/**
- * @Entity
- * @Table associada a tabela criada na DB
+ * Esta classe representa a entidade "User" (Usuário) no banco de dados.
+ * Ela é mapeada para a tabela "tb_user".
  */
 @Entity
 @Table(name = "tb_user")
 public class User implements Serializable {
 
+    private static final long serialVersionUID = 1L; // Adicionado serialVersionUID para Serializable
+
     /**
      * @Id Chave Primária
-     * @GeneratedValue Gerado auto, segundo estratégia
+     * @GeneratedValue Gerado automaticamente, utilizando a estratégia de identidade (geralmente do banco de dados).
      */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,15 +36,17 @@ public class User implements Serializable {
 
 
     /**
-     * @OneToMany associação uma para muitas (mapeado por)
-     * @JsonIgnore evita o loop de mão dupla (Lazy Loading), um user tem varios orders
-     * por sua ves a order tem um user, isso provoca um loop infinito
+     * @OneToMany associação um-para-muitos (1-N) (mapeado por)
+     * @JsonIgnore evita o loop de mão dupla (lazy loading), um usuário tem vários pedidos
+     * por sua vez, o pedido tem um usuário, isso provoca um loop infinito se não ignorarmos.
+     * mappedBy: Especifica o campo na classe Order que detém a chave estrangeira para User.
      */
     @JsonIgnore
     @OneToMany(mappedBy = "client")
-    private List<Order> orders = new ArrayList<>(); // Associação
+    private List<Order> orders = new ArrayList<>(); // Associação com a classe Order
 
     public User() {
+        // Construtor padrão (sem argumentos) é necessário para JPA.
     }
 
     public User(Long id, String name, String email, String phone, String password) {
@@ -55,6 +56,8 @@ public class User implements Serializable {
         this.phone = phone;
         this.password = password;
     }
+
+    // Getters e Setters para todos os atributos
 
     public Long getId() {
         return id;
@@ -100,8 +103,11 @@ public class User implements Serializable {
         return orders;
     }
 
+    // equals e hashCode baseados no ID para garantir a consistência do JPA e Hibernate
+
     @Override
     public boolean equals(Object o) {
+        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(id, user.id);
@@ -109,6 +115,7 @@ public class User implements Serializable {
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hash(id);
     }
+
 }

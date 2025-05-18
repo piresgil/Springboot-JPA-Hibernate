@@ -10,19 +10,15 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 
 import java.io.Serializable;
-import java.util.Objects;
 
-/**
- * Class Category
- *
- * @Entity
- * @Table associada a tabela criada na DB
- */
 @Entity
 @Table(name = "tb_order_item")
 public class OrderItem implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     /**
-     * @EmbeddedId
+     * @EmbeddedId Esta anotação indica que o atributo 'id' é uma chave primária composta.
+     * A classe OrderItemPK define a estrutura desta chave primária.
      */
     @EmbeddedId
     private OrderItemPK id = new OrderItemPK();
@@ -31,37 +27,40 @@ public class OrderItem implements Serializable {
     private Double price;
 
     public OrderItem() {
+        // Construtor padrão necessário para o JPA.
     }
 
     public OrderItem(Order order, Product product, Integer quantity, Double price) {
-        id.setOrder(order);
-        id.setProduct(product);
+        this(); // Chama o construtor padrão para inicializar o 'id'.
+        this.id.setOrder(order);
+        this.id.setProduct(product);
         this.quantity = quantity;
         this.price = price;
     }
 
     /**
-     * @JsonIgnore
+     * @JsonIgnore Impede a serialização da propriedade 'order' para evitar recursão infinita
+     * em relacionamentos cíclicos.
      */
     @JsonIgnore
     public Order getOrder() {
-        return id.getOrder();
+        return this.id.getOrder();
     }
 
     public void setOrder(Order order) {
-        id.setOrder(order);
+        this.id.setOrder(order);
     }
 
     public Product getProduct() {
-        return id.getProduct();
+        return this.id.getProduct();
     }
 
-    public void getProduct(Product product) {
-        id.setProduct(product);
+    public void setProduct(Product product) {
+        this.id.setProduct(product);
     }
 
     public Integer getQuantity() {
-        return quantity;
+        return this.quantity;
     }
 
     public void setQuantity(Integer quantity) {
@@ -69,26 +68,44 @@ public class OrderItem implements Serializable {
     }
 
     public Double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
     }
 
-    public Double getSubTotal(){
-        return price * quantity;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        OrderItem orderItem = (OrderItem) o;
-        return Objects.equals(id, orderItem.id);
+    public Double getSubTotal() {
+        return this.price * this.quantity;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((this.id == null) ? 0 : this.id.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        OrderItem other = (OrderItem) obj;
+        if (this.id == null) {
+            if (other.id != null) {
+                return false;
+            }
+        } else if (!this.id.equals(other.id)) {
+            return false;
+        }
+        return true;
     }
 }
