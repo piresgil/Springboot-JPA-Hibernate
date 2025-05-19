@@ -1,195 +1,263 @@
 /* Definições de fontes personalizadas */
 @font-face {
-    src: url("../_fontes/TaxiDriver.ttf"); /* Caminho para o arquivo da fonte Taxi Driver */
-    font-family: "Taxi Driver"; /* Nome da família da fonte para usar no CSS */
+    src: url("../_fontes/TaxiDriver.ttf");
+    /* Caminho para o arquivo da fonte Taxi Driver */
+    font-family: "Taxi Driver";
+    /* Nome da família da fonte para usar no CSS */
 }
 
 @font-face {
-    src: url("../_fontes/computer-font.ttf"); /* Caminho para o arquivo da fonte Computer-font */
-    font-family: "Computer-font"; /* Nome da família da fonte para usar no CSS */
+    src: url("../_fontes/computer-font.ttf");
+    /* Caminho para o arquivo da fonte Computer-font */
+    font-family: "Computer-font";
+    /* Nome da família da fonte para usar no CSS */
 }
 
 /* Reset de estilos básicos para todos os elementos */
 * {
-    margin: 0; /* Remove margens padrão */
-    padding: 0; /* Remove paddings padrão */
-    box-sizing: border-box; /* Faz com que padding e border sejam incluídos na largura e altura do elemento */
+    margin: 0;
+    /* Remove margens padrão */
+    padding: 0;
+    /* Remove paddings padrão */
+    box-sizing: border-box;
+    /* Faz com que padding e border sejam incluídos na largura e altura do elemento */
 }
 
 /* Estilos para a tag <li> (itens de lista) */
 li {
-    list-style: none; /* Remove os marcadores de lista padrão (bolinhas, números) */
+    list-style: none;
+    /* Remove os marcadores de lista padrão (bolinhas, números) */
 }
 
 /* Estilos para a tag <a> (links) */
 a {
-    text-decoration: none; /* Remove a decoração de texto padrão (sublinhado) */
+    text-decoration: none;
+    /* Remove a decoração de texto padrão (sublinhado) */
 }
 
 /* Estilos para a tag <p> (parágrafos) */
 p {
-    padding: 5px; /* Adiciona um pequeno padding interno de 5 pixels */
+    padding: 5px;
+    /* Adiciona um pequeno padding interno de 5 pixels */
 }
 
 /* Estilos para o elemento <header> */
 header {
-    position: fixed; /* Fixa o cabeçalho na parte superior da janela do navegador */
-    width: 100%; /* Ocupa toda a largura da janela */
-    z-index: 1; /* Garante que o cabeçalho fique acima de outros elementos (com z-index menor) */
-    font-size: 16px; /* Define o tamanho da fonte base para o cabeçalho */
-    transition: all 0.4s ease-out; /* Adiciona uma transição suave para todas as propriedades (usado para animações) */
+    position: fixed;
+    /* Fixa o cabeçalho na parte superior da janela do navegador */
+    width: 100%;
+    /* Ocupa toda a largura da janela */
+    z-index: 1;
+    /* Garante que o cabeçalho fique acima de outros elementos (com z-index menor) */
+    font-size: 16px;
+    /* Define o tamanho da fonte base para o cabeçalho */
+    transition: all 0.4s ease-out;
+    /* Adiciona uma transição suave para todas as propriedades (usado para animações) */
 }
 
 /* Estilos específicos para o cabeçalho quando ele tem a classe "max-header" */
 .max-header {
-    background-color: #2574a9; /* Define a cor de fundo */
-    height: 100px; /* Define a altura */
+    background-color: #2574a9;
+    /* Define a cor de fundo */
+    height: 150px;
+    /* Define a altura */
 }
 
 /* Estilos específicos para o cabeçalho quando ele tem a classe "main-header" */
 .main-header {
-    background-color: #c5eff7; /* Define a cor de fundo */
-    height: 80px; /* Define a altura (para telas menores, provavelmente) */
+    background-color: #c5eff7;
+    /* Define a cor de fundo */
+    height: 80px;
+    /* Define a altura (para telas menores, provavelmente) */
 }
 
 /* Estilos para o contêiner principal do cabeçalho */
 .conteiner {
-    max-width: 1220px; /* Define a largura máxima do contêiner */
-    height: 100%; /* Ocupa toda a altura do elemento pai (header) */
-    margin: 0 auto; /* Centraliza o contêiner horizontalmente */
-    padding: 0 60px; /* Adiciona padding nas laterais */
-    display: grid; /* Usa o sistema de layout Grid */
-    grid-template-areas: "lgo ... nav"; /* Define as áreas do grid (logo, espaço vazio, navegação) */
-    grid-auto-columns: auto 1fr auto; /* Define o tamanho automático das colunas do grid */
-    align-content: center; /* Alinha o conteúdo verticalmente no centro do contêiner */
+    max-width: 1220px;
+    /* Define a largura máxima do contêiner */
+    height: 100%;
+    /* Ocupa toda a altura do elemento pai (header) */
+    margin: 0 auto;
+    /* Centraliza o contêiner horizontalmente */
+    padding: 0 60px;
+    /* Adiciona padding nas laterais */
+    display: grid;
+    /* Usa o sistema de layout Grid */
+    grid-template-areas: "lgo ... nav";
+    /* Define as áreas do grid (logo, espaço vazio, navegação) */
+    grid-auto-columns: auto 1fr auto;
+    /* Define o tamanho automático das colunas do grid */
+    align-content: center;
+    /* Alinha o conteúdo verticalmente no centro do contêiner */
 }
 
 /* Estilos para o elemento com a classe "logo" */
 .logo {
-    grid-area: lgo; /* Posiciona este elemento na área "lgo" do grid */
-    
+    grid-area: lgo;
+    /* Posiciona este elemento na área "lgo" do grid */
+
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2; /* Para garantir que fique acima de outros elementos, se necessário */
+    z-index: 2;
+    /* Para garantir que fique acima de outros elementos, se necessário */
 }
 
 /* Estilos para o elemento SVG com o ID "lettring" (provavelmente o texto da logo) */
 svg#lettring {
-    width: 290px; /* Define a largura do SVG */
+    width: 290px;
+    /* Define a largura do SVG */
 }
 
 /* Estilos específicos para o logo dentro do cabeçalho "max-header" */
 .max-logo svg {
-    height: 90px; /* Define a altura do SVG da logo */
-    width: 90px; /* Define a largura do SVG da logo */
-    fill: #c5eff7; /* Define a cor de preenchimento do SVG */
+    height: 90px;
+    /* Define a altura do SVG da logo */
+    width: 90px;
+    /* Define a largura do SVG da logo */
+    fill: #c5eff7;
+    /* Define a cor de preenchimento do SVG */
 }
 
 /* Estilos específicos para o logo dentro do cabeçalho "main-header" (para telas menores) */
 .main-logo svg {
-    height: 80px; /* Define a altura do SVG da logo */
-    width: 80px; /* Define a largura do SVG da logo */
-    fill: #2574a9; /* Define a cor de preenchimento do SVG */
+    height: 80px;
+    /* Define a altura do SVG da logo */
+    width: 80px;
+    /* Define a largura do SVG da logo */
+    fill: #2574a9;
+    /* Define a cor de preenchimento do SVG */
 }
 
 /* Estilos para a barra de navegação */
 .nav-bar {
-    grid-area: nav; /* Posiciona este elemento na área "nav" do grid */
-    display: grid; /* Usa o sistema de layout Grid */
-    align-content: center; /* Alinha o conteúdo verticalmente no centro da barra de navegação */
+    grid-area: nav;
+    /* Posiciona este elemento na área "nav" do grid */
+    display: grid;
+    /* Usa o sistema de layout Grid */
+    align-content: center;
+    /* Alinha o conteúdo verticalmente no centro da barra de navegação */
 }
 
 /* Estilos para os links <a> dentro da barra de navegação */
 .nav-bar a {
-    position: relative; /* Permite posicionar pseudo-elementos relativos a este elemento */
-    font-family: "Taxi Driver"; /* Usa a fonte personalizada "Taxi Driver" */
-    text-transform: uppercase; /* Converte o texto para maiúsculas */
-    transition: all 0.4s ease-out; /* Adiciona uma transição suave para todas as propriedades */
+    position: relative;
+    /* Permite posicionar pseudo-elementos relativos a este elemento */
+    font-family: "Taxi Driver";
+    /* Usa a fonte personalizada "Taxi Driver" */
+    text-transform: uppercase;
+    /* Converte o texto para maiúsculas */
+    transition: all 0.4s ease-out;
+    /* Adiciona uma transição suave para todas as propriedades */
 }
 
 /* Estilos para o pseudo-elemento "::before" dos links na barra de navegação (linha superior ao passar o mouse) */
 .nav-bar a::before {
-    content: ""; /* Conteúdo vazio necessário para pseudo-elementos */
-    position: absolute; /* Posiciona o elemento de forma absoluta dentro do link */
-    top: -10px; /* Posiciona 10 pixels acima do link */
-    left: 0; /* Começa na extremidade esquerda */
-    width: 100%; /* Ocupa toda a largura do link */
-    height: 2px; /* Define a altura da linha */
-    background-color: currentColor; /* Usa a cor do texto do link */
-    transform-origin: left; /* Define a origem da transformação para a esquerda */
-    transform: scaleX(0); /* Inicialmente, a linha não é visível (escala horizontal é 0) */
-    transition: all 0.2s ease-out; /* Adiciona uma transição suave para a escala */
+    content: "";
+    /* Conteúdo vazio necessário para pseudo-elementos */
+    position: absolute;
+    /* Posiciona o elemento de forma absoluta dentro do link */
+    top: -10px;
+    /* Posiciona 10 pixels acima do link */
+    left: 0;
+    /* Começa na extremidade esquerda */
+    width: 100%;
+    /* Ocupa toda a largura do link */
+    height: 2px;
+    /* Define a altura da linha */
+    background-color: currentColor;
+    /* Usa a cor do texto do link */
+    transform-origin: left;
+    /* Define a origem da transformação para a esquerda */
+    transform: scaleX(0);
+    /* Inicialmente, a linha não é visível (escala horizontal é 0) */
+    transition: all 0.2s ease-out;
+    /* Adiciona uma transição suave para a escala */
 }
 
-/* Estilos para o pseudo-elemento "::before" quando o mouse passa sobre o link */
-.nav-bar a:hover::before {
-    transform: scaleX(1); /* Expande a linha horizontalmente para ficar visível */
-}
+
 
 /* Estilos para o pseudo-elemento "::after" dos links na barra de navegação (linha inferior ao passar o mouse) */
 .nav-bar a::after {
-    content: ""; /* Conteúdo vazio necessário para pseudo-elementos */
-    position: absolute; /* Posiciona o elemento de forma absoluta dentro do link */
-    bottom: -10px; /* Posiciona 10 pixels abaixo do link */
-    left: 0; /* Começa na extremidade esquerda */
-    width: 100%; /* Ocupa toda a largura do link */
-    height: 2px; /* Define a altura da linha */
-    background-color: currentColor; /* Usa a cor do texto do link */
-    transform-origin: right; /* Define a origem da transformação para a direita */
-    transform: scaleX(0); /* Inicialmente, a linha não é visível (escala horizontal é 0) */
-    transition: all 0.2s ease-out; /* Adiciona uma transição suave para a escala */
+    content: "";
+    /* Conteúdo vazio necessário para pseudo-elementos */
+    position: absolute;
+    /* Posiciona o elemento de forma absoluta dentro do link */
+    bottom: -10px;
+    /* Posiciona 10 pixels abaixo do link */
+    left: 0;
+    /* Começa na extremidade esquerda */
+    width: 100%;
+    /* Ocupa toda a largura do link */
+    height: 2px;
+    /* Define a altura da linha */
+    background-color: currentColor;
+    /* Usa a cor do texto do link */
+    transform-origin: right;
+    /* Define a origem da transformação para a direita */
+    transform: scaleX(0);
+    /* Inicialmente, a linha não é visível (escala horizontal é 0) */
+    transition: all 0.2s ease-out;
+    /* Adiciona uma transição suave para a escala */
 }
 
-/* Estilos para o pseudo-elemento "::after" quando o mouse passa sobre o link */
-.nav-bar a:hover::after {
-    transform: scaleX(1); /* Expande a linha horizontalmente para ficar visível */
-}
+
 
 /* Estilos para os links <a> dentro da barra de navegação "max-nav" (para o cabeçalho maior) */
 .max-nav a {
-    font-size: 1em; /* Define o tamanho da fonte */
-    color: #c5eff7; /* Define a cor do texto */
+    font-size: 1em;
+    /* Define o tamanho da fonte */
+    color: #c5eff7;
+    /* Define a cor do texto */
 }
 
 /* Estilos para os links <a> dentro da barra de navegação "main-nav" (para o cabeçalho menor) */
 .main-nav a {
-    font-size: 0.875em; /* Define o tamanho da fonte */
-    color: #2574a9; /* Define a cor do texto */
+    font-size: 0.875em;
+    /* Define o tamanho da fonte */
+    color: #2574a9;
+    /* Define a cor do texto */
 }
 
 /* Estilos para a lista não ordenada <ul> dentro da barra de navegação */
 .nav-bar ul {
-    display: grid; /* Usa o sistema de layout Grid */
-    grid-auto-flow: column; /* Organiza os itens em colunas automaticamente */
-    grid-gap: 20px; /* Define o espaçamento entre os itens do grid */
+    display: grid;
+    /* Usa o sistema de layout Grid */
+    grid-auto-flow: column;
+    /* Organiza os itens em colunas automaticamente */
+    grid-gap: 20px;
+    /* Define o espaçamento entre os itens do grid */
 }
 
 /* Estilos para a seção "fantasma" (usada para criar espaço abaixo do cabeçalho fixo) */
 .ghost {
-    width: 100%; /* Ocupa toda a largura */
-    height: 100px; /* Tem a mesma altura do cabeçalho "max-header" */
-    background-color: #cae1f1; /* Cor de fundo (pode ser transparente também) */
+    width: 100%;
+    /* Ocupa toda a largura */
+    height: 150px;
+    /* Tem a mesma altura do cabeçalho "max-header" */
+    background-color: #cae1f1;
+    /* Cor de fundo (pode ser transparente também) */
 }
 
-.ghost p{
-    font-size: 0.5em; /* Tamanho da fonte */
-    text-align: center; /* Centraliza o texto */
-}
 
 /* Estilos para telas menores que 768 pixels (design responsivo) */
 @media (max-width: 768px) {
+
     /* Ajustes para o contêiner principal */
     .conteiner {
-        position: relative; /* Permite posicionar elementos filhos de forma absoluta */
-        padding: 0 20px; /* Reduz o padding nas laterais */
+        position: relative;
+        /* Permite posicionar elementos filhos de forma absoluta */
+        padding: 0 20px;
+        /* Reduz o padding nas laterais */
         display: grid;
-        grid-template-areas: "lgo ... mnu"; /* A área "nav" é substituída por "mnu" (menu hambúrguer) */
+        grid-template-areas: "lgo ... mnu";
+        /* A área "nav" é substituída por "mnu" (menu hambúrguer) */
     }
 
     /* Ajustes para as seções principais */
     section {
-        font-size: 1em; /* Reduz o tamanho da fonte base nas seções */
+        font-size: 1em;
+        /* Reduz o tamanho da fonte base nas seções */
     }
 
     /* Ajustes para o SVG da logo no cabeçalho "max-header" */
@@ -218,18 +286,23 @@ svg#lettring {
 
     /* Estilos para o contêiner do menu hambúrguer */
     .menu {
-        grid-area: mnu; /* Posiciona na área "mnu" do grid */
+        grid-area: mnu;
+        /* Posiciona na área "mnu" do grid */
         display: grid;
-        align-content: center; /* Alinha verticalmente */
-        cursor: pointer; /* Muda o cursor para indicar que é clicável */
+        align-content: center;
+        /* Alinha verticalmente */
+        cursor: pointer;
+        /* Muda o cursor para indicar que é clicável */
     }
 
     /* Estilos para a linha do hambúrguer */
     .hamburger {
-        position: relative; /* Permite posicionar pseudo-elementos */
+        position: relative;
+        /* Permite posicionar pseudo-elementos */
         width: 28px;
         height: 3px;
-        transition: all 0.4s ease-out; /* Transição suave para animações */
+        transition: all 0.4s ease-out;
+        /* Transição suave para animações */
     }
 
     /* Estilos para a linha superior do hambúrguer (usando pseudo-elemento "::before") */
@@ -239,7 +312,8 @@ svg#lettring {
         top: -8px;
         left: 0;
         width: 100%;
-        height: 100%; /* Ocupa toda a altura do pai (3px) */
+        height: 100%;
+        /* Ocupa toda a altura do pai (3px) */
         background-color: #c5eff7;
         transition: all 0.4s ease-out;
     }
@@ -251,70 +325,90 @@ svg#lettring {
         top: 8px;
         left: 0;
         width: 100%;
-        height: 100%; /* Ocupa toda a altura do pai (3px) */
+        height: 100%;
+        /* Ocupa toda a altura do pai (3px) */
         background-color: #c5eff7;
         transition: all 0.4s ease-out;
     }
 
     /* Cor do hambúrguer para o cabeçalho "max-header" */
-    .max-hamburger, .max-hamburger::before, .max-hamburger::after {
+    .max-hamburger,
+    .max-hamburger::before,
+    .max-hamburger::after {
         background-color: #c5eff7;
     }
 
     /* Cor do hambúrguer para o cabeçalho "main-header" */
-    .main-hamburger, .main-hamburger::before, .main-hamburger::after {
+    .main-hamburger,
+    .main-hamburger::before,
+    .main-hamburger::after {
         background-color: #2574a9;
     }
 
     /* Estilos para o botão de fechar (quando o menu está aberto) */
     .close-btn {
         width: 32px;
-        transform: rotateZ(45deg); /* Roda o hambúrguer para formar um "X" */
+        transform: rotateZ(45deg);
+        /* Roda o hambúrguer para formar um "X" */
     }
 
     /* Ajustes para as linhas do botão de fechar */
-    .close-btn::before, .close-btn::after {
+    .close-btn::before,
+    .close-btn::after {
         top: 0;
-        transform: rotateZ(90deg); /* Roda as linhas para formar o "X" */
+        transform: rotateZ(90deg);
+        /* Roda as linhas para formar o "X" */
     }
 
     /* Estilos para a barra de navegação em telas menores (inicialmente escondida) */
     .nav-bar {
-        position: absolute; /* Posiciona de forma absoluta dentro do contêiner */
+        position: absolute;
+        /* Posiciona de forma absoluta dentro do contêiner */
         left: 0;
         width: 100%;
         background-color: #2980b9;
-        transform: translateX(-100%); /* Esconde a barra de navegação movendo-a para a esquerda */
-        transition: all 0.4s ease-out; /* Transição suave para a animação de abrir/fechar */
+        transform: translateX(-100%);
+        /* Esconde a barra de navegação movendo-a para a esquerda */
+        transition: all 0.4s ease-out;
+        /* Transição suave para a animação de abrir/fechar */
     }
 
     /* Posicionamento da barra de navegação "max-nav" */
     .max-nav {
-        top: 80px; /* Abaixo do cabeçalho "max-header" */
-        height: calc(100vh - 80px); /* Ocupa toda a altura da tela menos a altura do cabeçalho */
+        top: 80px;
+        /* Abaixo do cabeçalho "max-header" */
+        height: calc(100vh - 80px);
+        /* Ocupa toda a altura da tela menos a altura do cabeçalho */
     }
 
     /* Posicionamento da barra de navegação "main-nav" */
     .main-nav {
-        top: 60px; /* Abaixo do cabeçalho "main-header" */
-        height: calc(100vh - 60px); /* Ocupa toda a altura da tela menos a altura do cabeçalho */
+        top: 60px;
+        /* Abaixo do cabeçalho "main-header" */
+        height: calc(100vh - 60px);
+        /* Ocupa toda a altura da tela menos a altura do cabeçalho */
     }
 
     /* Classe adicionada via JavaScript para mostrar o menu */
     .menu-opened {
-        transform: translateX(0); /* Move a barra de navegação para a posição visível */
+        transform: translateX(0);
+        /* Move a barra de navegação para a posição visível */
     }
 
     /* Estilos para a lista não ordenada <ul> dentro da barra de navegação em telas menores */
     .nav-bar ul {
-        justify-content: center; /* Centraliza os itens horizontalmente */
-        grid-auto-flow: row; /* Organiza os itens em linhas */
-        grid-gap: 80px; /* Espaçamento maior entre os itens */
+        justify-content: center;
+        /* Centraliza os itens horizontalmente */
+        grid-auto-flow: row;
+        /* Organiza os itens em linhas */
+        grid-gap: 80px;
+        /* Espaçamento maior entre os itens */
     }
 
     /* Estilos para os itens de lista <li> dentro da barra de navegação */
     .nav-bar li {
-        text-align: center; /* Centraliza o texto dos links */
+        text-align: center;
+        /* Centraliza o texto dos links */
     }
 
     /* Estilos para os links <a> dentro da barra de navegação em telas menores */
@@ -326,94 +420,148 @@ svg#lettring {
 
 /* Estilos para a tag <main> (conteúdo principal) */
 main {
-    font-size: 20px; /* Tamanho da fonte base para o conteúdo principal */
+    font-size: 20px;
+    /* Tamanho da fonte base para o conteúdo principal */
 }
 
 /* Estilos para as seções dentro da tag <main> */
 main section {
-    display: grid; /* Usa o sistema de layout Grid */
-    justify-content: center; /* Centraliza horizontalmente os itens do grid */
-    align-content: center; /* Centraliza verticalmente os itens do grid */
-    font-family: "Computer-font"; /* Usa a fonte personalizada "Computer-font" */
-    font-size: 2em; /* Tamanho da fonte */
-    color: #2574a9; /* Cor do texto */
+    display: grid;
+    /* Usa o sistema de layout Grid */
+    justify-content: center;
+    /* Centraliza horizontalmente os itens do grid */
+    align-content: center;
+    /* Centraliza verticalmente os itens do grid */
+    font-family: "Computer-font";
+    /* Usa a fonte personalizada "Computer-font" */
+    font-size: 2em;
+    /* Tamanho da fonte */
+    color: #2574a9;
+    /* Cor do texto */
 }
 
 /* Estilos para a tag <span> dentro das seções */
 main section span {
-    text-align: center; /* Centraliza o texto */
+    text-align: center;
+    /* Centraliza o texto */
 }
 
 /* Estilos para a tag <h1> dentro das seções */
 main section h1 {
-    font-size: 1.5em; /* Tamanho da fonte */
-    text-align: center; /* Centraliza o texto */
+    font-size: 1.5em;
+    /* Tamanho da fonte */
+    /* text-align: center;
+    /* Centraliza o texto */
+    display: flex;
+    justify-content: center;
+    /* Centraliza horizontalmente */
+    align-items: flex-start;
+    /* Alinha ao topo verticalmente */
+    /* height: 100vh; /* Exemplo: Se você quer que a seção ocupe toda a altura da tela */
+    /* Outros estilos para a sua seção #index */
 }
 
 /* Estilos para a tag <p> dentro das seções */
 main section p {
-    font-size: 0.5em; /* Tamanho da fonte */
-    text-align: center; /* Centraliza o texto */
-    font-family: "Taxi Driver"; /* Usa a fonte personalizada "Taxi Driver" */
+    font-size: 0.5em;
+    /* Tamanho da fonte */
+    text-align: center;
+    /* Centraliza o texto */
+    font-family: "Taxi Driver";
+    /* Usa a fonte personalizada "Taxi Driver" */
 }
 
-section#sobre p {
-    /* Suas propriedades de estilo aqui */
-    font-size: 0,2em; /* Tamanho da fonte (pode usar px, em, rem, etc.) */
-    color: #333; /* Cor do texto (pode usar nomes de cores, códigos hexadecimais, RGB, etc.) */
-   /*  line-height: 1.6; Altura da linha para melhor leitura */
-   /* font-family: "Arial", sans-serif; /* Tipo de fonte */
-   /* font-weight: normal; /* Peso da fonte (normal, bold, bolder, lighter, ou números como 400, 700) */
-   /* font-style: normal; /* Estilo da fonte (normal, italic, oblique) */
-   /* text-align: left; /* Alinhamento do texto (left, right, center, justify) */
-   /* margin-bottom: 15px; /* Margem inferior para separar os parágrafos */
-    /* Adicione outras propriedades conforme necessário */
+#sobre p {
+    /* Exemplo: Deixa o texto em itálico */
+    font-style: italic;
+    /* Exemplo: Define a cor do texto para um cinza mais claro */
+    font-size: 0.5em;
+    /* Exemplo: Define um tamanho de fonte um pouco menor */
+    margin-top: 1em;
+    /* Adiciona espaço acima do parágrafo (1em é relativo ao tamanho da fonte) */
 }
 
-
-
-
-
-
-
-/* Estilos específicos para os links <a> dentro da seção com o ID "contacto" ao passar o mouse */
-section#contacto a:hover {
-    text-decoration: underline; /* Adiciona um sublinhado */
+#descricao-contacto {
+    font-style: italic;
+    /* Exemplo: Deixa o texto em itálico */
+    color: #555;
+    /* Exemplo: Define a cor do texto para um cinza mais claro */
+    font-size: 0.5em;
+    /* Exemplo: Define um tamanho de fonte um pouco menor */
+    margin-top: 1em;
+    /* Adiciona espaço acima do parágrafo (1em é relativo ao tamanho da fonte) */
+    margin-bottom: 1em;
+    /* Adiciona espaço abaixo do parágrafo */
+    /* Adicione outras propriedades CSS que você desejar */
 }
+
 
 /* Estilos para seções ímpares dentro da tag <main> */
 main section:nth-child(odd) {
     /* Impar */
-    height: 100vh; /* Ocupa toda a altura da viewport */
-    padding-top: 80px; /* Adiciona padding no topo (para evitar sobreposição do cabeçalho fixo) */
-    background-color: #cae1f1; /* Cor de fundo */
+    height: 100vh;
+    /* Ocupa toda a altura da viewport */
+    padding-top: 80px;
+    /* Adiciona padding no topo (para evitar sobreposição do cabeçalho fixo) */
+    background-color: #cae1f1;
+    /* Cor de fundo */
 }
+
 
 /* Estilos para seções pares dentro da tag <main> */
 main section:nth-child(even) {
     /* Par */
-    height: 100vh; /* Ocupa toda a altura da viewport */
-    padding-top: 80px; /* Adiciona padding no topo */
-    background-color: #b7d5eb; /* Cor de fundo */
+    height: 100vh;
+    /* Ocupa toda a altura da viewport */
+    padding-top: 80px;
+    /* Adiciona padding no topo */
+    background-color: #b7d5eb;
+    /* Cor de fundo */
 }
 
 /* Formatação para o rodapé */
 footer#rodape {
     /* Limpa qualquer configuração de float */
     clear: both;
-    background-color: #cae1f1; /* Cor de fundo */
-    padding: 10px; /* Adiciona padding interno */
+    background-color: #cae1f1;
+    /* Cor de fundo */
+    padding: 10px;
+    /* Adiciona padding interno */
 }
 
 /* Formatação para os parágrafos e links dentro do rodapé */
-footer#rodape p, footer#rodape a {
-    color: #2574a9; /* Cor do texto */
-    text-align: center; /* Centraliza o texto */
-    font-family: "Computer-font"; /* Usa a fonte personalizada "Computer-font" */
-    text-decoration: none; /* Remove o sublinhado dos links */
+footer#rodape p,
+footer#rodape a {
+    color: #2574a9;
+    /* Cor do texto */
+    text-align: center;
+    /* Centraliza o texto */
+    font-family: "Computer-font";
+    /* Usa a fonte personalizada "Computer-font" */
+    text-decoration: none;
+    /* Remove o sublinhado dos links */
+}
+
+/* Estilos para o pseudo-elemento "::after" quando o mouse passa sobre o link */
+.nav-bar a:hover::after {
+    transform: scaleX(1);
+    /* Expande a linha horizontalmente para ficar visível */
+}
+
+/* Estilos específicos para os links <a> dentro da seção com o ID "contacto" ao passar o mouse */
+section#contacto a:hover {
+    text-decoration: underline;
+    /* Adiciona um sublinhado */
 }
 
 /* Estilos para os links dentro do rodapé ao passar o mouse */
 footer#rodape a:hover {
-    text-decoration: underline; /* Adiciona um sublinhado */
+    text-decoration: underline;
+    /* Adiciona um sublinhado */
+}
+
+/* Estilos para o pseudo-elemento "::before" quando o mouse passa sobre o link */
+.nav-bar a:hover::before {
+    transform: scaleX(1);
+    /* Expande a linha horizontalmente para ficar visível */
 }

@@ -1,59 +1,101 @@
 
+/* Aplica estilos a todos os elementos descendentes de um elemento com a classe 'tree'. */
 .tree * {
+    /* Remove o estilo padrão de marcadores de lista (bolinhas, números) dos elementos de lista. */
     list-style-type: none;
 }
 
+
+/* Aplica estilos aos links (<a>) que estão dentro de itens de lista (<li>) dentro de um elemento com a classe 'tree'. */
 .tree li a {
+    /* Exemplo: Deixa o texto em itálico */
+    font-style: italic;
+    /* Exemplo: Define a cor do texto para um cinza mais claro */
+    font-size: 0.5em;
+    /* Exemplo: Define um tamanho de fonte um pouco menor */
+    /* Define a cor do texto do link para um tom de azul (#2574a9). */
     color: #2574a9;
+    /* Remove a decoração padrão de sublinhado dos links. */
     text-decoration: none;
-    font-size: 0.6em;
 }
 
 
-.tree ul {
-    padding-left: 25px;
-}
 
+/* Aplica estilos à lista não ordenada com a classe 'tree' e a todos os itens de lista dentro dela. */
 ul.tree, .tree li {
+    /* Remove o preenchimento à esquerda padrão, permitindo um controle mais preciso do recuo. */
     padding-left: 0px;
+    /* Adiciona um preenchimento na parte superior de 5 pixels a cada item, criando um pequeno espaçamento vertical. */
     padding-top: 5px;
+    /* Define o cursor do mouse para 'pointer' ao passar sobre a lista ou seus itens, indicando que são interativos. */
     cursor: pointer;
+    /* Centraliza o texto dentro da lista e seus itens. */
+    text-align: center; /* Nota: Isso pode não ser o comportamento desejado para uma estrutura de árvore, geralmente alinhada à esquerda. */
 }
 
+/* Aplica estilos à lista não ordenada com a classe 'tree' e a todas as listas não ordenadas que são descendentes dela (sub-listas). */
 ul.tree, ul.tree ul {
+    /* Remove o estilo padrão de marcadores de lista. */
     list-style: none;
+    /* Remove as margens padrão. */
     margin: 0;
+    /* Remove o preenchimento padrão. */
     padding: 0;
-} 
+}
 
+/* Aplica uma margem à esquerda de 10 pixels a todas as listas não ordenadas que são descendentes de uma lista com a classe 'tree' (sub-listas).
+   Isso cria o recuo visual para indicar a hierarquia. */
 ul.tree ul {
     margin-left: 10px;
 }
 
+/* Aplica estilos a todos os itens de lista que são descendentes de uma lista com a classe 'tree'. */
 ul.tree li {
+    /* Remove as margens padrão. */
     margin: 0;
-    margin: 0 9px;
-    padding: 0 7px;
-    border-left:1px solid #2574a9;
-
-}
-
-ul.tree li:last-child {
-    border-left:none;
-}
+    /* Adiciona uma borda vertical de 1 pixel sólida e da cor azul (#2574a9) à esquerda de cada item de lista,
+       criando a linha de conexão visual da árvore. */
+    border-left: none;
 
 ul.tree li:before {
-    position:relative;
-    top:-0.3em;
-    height:1em;
-    width:12px;
-    color:white;
-    border-bottom:1px solid #2574a9;
-    content:"";
-    display:inline-block;
-    left:-7px;
+    position: absolute; /* Mude para absolute para controlar a altura */
+    top: 50%; /* Centraliza verticalmente o ponto de referência */
+    transform: translateY(-50%); /* Ajusta para centralizar o elemento */
+    left: 2px; /* Ajuste a posição horizontal conforme necessário */
+    height: 0.8em; /* Defina a altura da linha (ajuste conforme o tamanho da sua fonte) */
+    width: 1px; /* Largura da linha */
+    background-color: #2574a9; /* Cor da linha */
+    content: "";
+    display: block; /* Para que a altura e largura funcionem */
+    border-bottom: none; /* Remova a borda inferior que estava antes */
 }
 
-ul.tree li:last-child:before {
-    border-left:1px solid #2574a9;   
+/* Ajuste o padding esquerdo do link para dar espaço à linha */
+.tree li a {
+    padding-left: 10px; /* Ajuste conforme a largura da linha e o espaçamento desejado */
 }
+
+/* Remova o posicionamento relativo que estava antes no li:before */
+ul.tree li:before {
+    position: absolute;
+    /* ... outros estilos ... */
+}
+
+/* Adicione position: relative ao li para que o absolute do ::before seja posicionado corretamente */
+ul.tree li {
+    position: relative;
+    /* ... outros estilos ... */
+}
+
+/*
+Descrição do que acontece:
+
+Este CSS cria um visual de estrutura de árvore (organograma) usando listas não ordenadas (<ul> e <li>).
+
+- A regra `ul.tree, .tree li` remove o preenchimento esquerdo padrão e adiciona um preenchimento superior, além de definir o cursor como pointer e centralizar o texto (o alinhamento central pode não ser ideal para uma árvore).
+- A regra `ul.tree, ul.tree ul` remove os estilos de lista, margens e preenchimentos das listas raiz e sub-listas.
+- A regra `ul.tree ul` adiciona uma margem à esquerda para criar o recuo das sub-listas.
+- A regra `ul.tree li` adiciona uma borda esquerda a cada item de lista para criar a linha vertical da árvore.
+
+O resultado visual é uma estrutura de tópicos hierárquica onde os itens são conectados por linhas verticais e pequenas linhas horizontais, dando a aparência de uma árvore genealógica ou um explorador de arquivos. Os links dentro dos itens da árvore terão a cor azul especificada, sem sublinhado e com uma fonte pequena.
+*/
