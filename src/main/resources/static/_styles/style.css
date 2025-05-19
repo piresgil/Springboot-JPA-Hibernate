@@ -59,7 +59,7 @@ header {
 .max-header {
     background-color: #2574a9;
     /* Define a cor de fundo */
-    height: 150px;
+    height: 100px;
     /* Define a altura */
 }
 
@@ -233,7 +233,7 @@ svg#lettring {
 .ghost {
     width: 100%;
     /* Ocupa toda a largura */
-    height: 150px;
+    height: 100px;
     /* Tem a mesma altura do cabeçalho "max-header" */
     background-color: #cae1f1;
     /* Cor de fundo (pode ser transparente também) */
@@ -450,14 +450,10 @@ main section span {
 main section h1 {
     font-size: 1.5em;
     /* Tamanho da fonte */
-    /* text-align: center;
+    text-align: center;
     /* Centraliza o texto */
-    display: flex;
-    justify-content: center;
-    /* Centraliza horizontalmente */
-    align-items: flex-start;
+   
     /* Alinha ao topo verticalmente */
-    /* height: 100vh; /* Exemplo: Se você quer que a seção ocupe toda a altura da tela */
     /* Outros estilos para a sua seção #index */
 }
 
@@ -469,6 +465,21 @@ main section p {
     /* Centraliza o texto */
     font-family: "Taxi Driver";
     /* Usa a fonte personalizada "Taxi Driver" */
+}
+
+#descricao-portofolio {
+    margin-bottom: 1em; /* Ajuste o valor conforme necessário */
+}
+
+#descricao-portofolio p {
+    font-style: italic;
+    /* Exemplo: Deixa o texto em itálico */
+    color: #555;
+    /* Exemplo: Define a cor do texto para um cinza mais claro */
+    font-size: 0.5em;
+    /* Exemplo: Define um tamanho de fonte um pouco menor */
+    margin-top: 1em;
+    /* Adiciona espaço acima do parágrafo (1em é relativo ao tamanho da fonte) */
 }
 
 #sobre p {

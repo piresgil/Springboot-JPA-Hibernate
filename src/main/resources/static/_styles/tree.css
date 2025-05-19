@@ -1,8 +1,16 @@
-
 /* Aplica estilos a todos os elementos descendentes de um elemento com a classe 'tree'. */
 .tree * {
     /* Remove o estilo padrão de marcadores de lista (bolinhas, números) dos elementos de lista. */
     list-style-type: none;
+}
+
+/* Aplica estilos aos links (<span>) que estão dentro de itens de lista (<li>) dentro de um elemento com a classe 'tree'. */
+.tree li span {
+    margin-top: 9em;
+    /* Adiciona uma margem inferior ao span */
+    color: #2574a9;
+    /* Remove a decoração padrão de sublinhado dos links. */
+    text-decoration: none;
 }
 
 
@@ -22,7 +30,8 @@
 
 
 /* Aplica estilos à lista não ordenada com a classe 'tree' e a todos os itens de lista dentro dela. */
-ul.tree, .tree li {
+ul.tree,
+.tree li {
     /* Remove o preenchimento à esquerda padrão, permitindo um controle mais preciso do recuo. */
     padding-left: 0px;
     /* Adiciona um preenchimento na parte superior de 5 pixels a cada item, criando um pequeno espaçamento vertical. */
@@ -30,11 +39,13 @@ ul.tree, .tree li {
     /* Define o cursor do mouse para 'pointer' ao passar sobre a lista ou seus itens, indicando que são interativos. */
     cursor: pointer;
     /* Centraliza o texto dentro da lista e seus itens. */
-    text-align: center; /* Nota: Isso pode não ser o comportamento desejado para uma estrutura de árvore, geralmente alinhada à esquerda. */
+    text-align: center;
+    /* Nota: Isso pode não ser o comportamento desejado para uma estrutura de árvore, geralmente alinhada à esquerda. */
 }
 
 /* Aplica estilos à lista não ordenada com a classe 'tree' e a todas as listas não ordenadas que são descendentes dela (sub-listas). */
-ul.tree, ul.tree ul {
+ul.tree,
+ul.tree ul {
     /* Remove o estilo padrão de marcadores de lista. */
     list-style: none;
     /* Remove as margens padrão. */
@@ -57,37 +68,47 @@ ul.tree li {
        criando a linha de conexão visual da árvore. */
     border-left: none;
 
-ul.tree li:before {
-    position: absolute; /* Mude para absolute para controlar a altura */
-    top: 50%; /* Centraliza verticalmente o ponto de referência */
-    transform: translateY(-50%); /* Ajusta para centralizar o elemento */
-    left: 2px; /* Ajuste a posição horizontal conforme necessário */
-    height: 0.8em; /* Defina a altura da linha (ajuste conforme o tamanho da sua fonte) */
-    width: 1px; /* Largura da linha */
-    background-color: #2574a9; /* Cor da linha */
-    content: "";
-    display: block; /* Para que a altura e largura funcionem */
-    border-bottom: none; /* Remova a borda inferior que estava antes */
-}
+    ul.tree li:before {
+        position: absolute;
+        /* Mude para absolute para controlar a altura */
+        top: 50%;
+        /* Centraliza verticalmente o ponto de referência */
+        transform: translateY(-50%);
+        /* Ajusta para centralizar o elemento */
+        left: 2px;
+        /* Ajuste a posição horizontal conforme necessário */
+        height: 0.8em;
+        /* Defina a altura da linha (ajuste conforme o tamanho da sua fonte) */
+        width: 1px;
+        /* Largura da linha */
+        background-color: #2574a9;
+        /* Cor da linha */
+        content: "";
+        display: block;
+        /* Para que a altura e largura funcionem */
+        border-bottom: none;
+        /* Remova a borda inferior que estava antes */
+    }
 
-/* Ajuste o padding esquerdo do link para dar espaço à linha */
-.tree li a {
-    padding-left: 10px; /* Ajuste conforme a largura da linha e o espaçamento desejado */
-}
+    /* Ajuste o padding esquerdo do link para dar espaço à linha */
+    .tree li a {
+        padding-left: 10px;
+        /* Ajuste conforme a largura da linha e o espaçamento desejado */
+    }
 
-/* Remova o posicionamento relativo que estava antes no li:before */
-ul.tree li:before {
-    position: absolute;
-    /* ... outros estilos ... */
-}
+    /* Remova o posicionamento relativo que estava antes no li:before */
+    ul.tree li:before {
+        position: absolute;
+        /* ... outros estilos ... */
+    }
 
-/* Adicione position: relative ao li para que o absolute do ::before seja posicionado corretamente */
-ul.tree li {
-    position: relative;
-    /* ... outros estilos ... */
-}
+    /* Adicione position: relative ao li para que o absolute do ::before seja posicionado corretamente */
+    ul.tree li {
+        position: relative;
+        /* ... outros estilos ... */
+    }
 
-/*
+    /*
 Descrição do que acontece:
 
 Este CSS cria um visual de estrutura de árvore (organograma) usando listas não ordenadas (<ul> e <li>).
