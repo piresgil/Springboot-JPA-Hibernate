@@ -47,12 +47,12 @@ header {
 
 .max-header {
     background-color: #2574a9;
-    height: 100px;
+    height: 80px;
 }
 
 .main-header {
     background-color: #c5eff7;
-    height: 100px;
+    height: 60px;
 }
 
 /*Conteiner
@@ -72,34 +72,39 @@ header {
  **************************************************************************/
 .logo {
     grid-area: lgo;
+    position: absolute;
+    left: 0px;
+    padding-left: 5px;
+    /* Alinha os itens flex à esquerda */
 }
 
 .max-logo svg {
-    height: 130px;
-    width: 130px;
+    height: 75px;
+    width: 75px;
     fill: #c5eff7
 }
 
 .main-logo svg {
-    height: 80px;
-    width: 80px;
+    height: 50px;
+    width: 50px;
     fill: #2574a9
-}
-
-svg#lettring {
-    width: 290px;
 }
 
 /* letring
  **************************************************************************/
+svg#lettring {
+    width: 290px;
+}
+
+/* Barra/Menu de navegação
+ **************************************************************************/
+
 .nav-bar {
     grid-area: nav;
     display: grid;
     align-content: center;
 }
 
-/* Barra/Menu de navegação
- **************************************************************************/
 .nav-bar a {
     position: relative;
     font-family: "Taxi Driver";
@@ -250,35 +255,39 @@ footer#rodape a:hover {
 /* MINIMIZAR
  **************************************************************************/
 @media (max-width: 768px) {
-    .conteiner {
-        position: relative;
-        padding: 0 20px;
-        display: grid;
-        grid-template-areas: "lgo ... mnu";
-    }
 
-    section {
-        font-size: 1em;
+    .logo {
+        grid-area: lgo;
+        position: relative;
+        margin-top: 0;
+        margin-left: 0;
+        /* Alinha os itens flex à esquerda */
     }
 
     .max-logo svg {
-        height: 70px;
-        width: 70px;
+        height: 55px;
+        width: 55px;
         fill: #c5eff7
     }
 
     .main-logo svg {
-        height: 50px;
-        width: 50px;
+        height: 25px;
+        width: 25px;
         fill: #2574a9
     }
 
-    .max-header {
-        height: 80px;
+
+    .conteiner {
+        position: relative;
+        display: grid;
+        grid-template-areas: "lgo ... mnu";
+        margin: 0 auto;
+        grid-auto-columns: auto 1fr auto;
     }
 
-    .main-header {
-        height: 60px;
+
+    section {
+        font-size: 1em;
     }
 
     .menu {
