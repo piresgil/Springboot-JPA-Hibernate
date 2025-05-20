@@ -206,23 +206,71 @@ main section p {
     font-family: "Taxi Driver";
 }
 
+/* Index section
+ **************************************************************************/
+section#index a:hover {
+
+    text-decoration: underline;
+}
+
+/* BD section
+ **************************************************************************/
+section#index a:hover {
+
+    text-decoration: underline;
+}
+
+/* portfolio section
+ **************************************************************************/
+section#portofolio p {
+    font-family: "Taxi Driver";
+    font-size: 0.5em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+
+/* sobre section
+ **************************************************************************/
+section#sobre p {
+    font-family: "Taxi Driver";
+    font-size: 0.5em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
 /* Contacto section
  **************************************************************************/
+section#contacto p#descricao-contacto {
+    font-family: "Taxi Driver";
+    font-size: 0.5em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
 section#contacto a:hover {
     text-decoration: underline;
 }
 
+
 main section:nth-child(odd) {
     /*Impar*/
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 10px;
     background-color: #cae1f1;
 }
 
 main section:nth-child(even) {
     /*Par*/
     height: 100vh;
-    padding-top: 100px;
+    padding-top: 10px;
     background-color: #b7d5eb;
 }
 
@@ -233,23 +281,16 @@ footer#rodape {
     /*limpa configuração de separação entre corpo e lateral*/
     clear: both;
     background-color: #cae1f1;
+    text-align: right;
     padding: 10px;
 }
 
 /*Formata footer
  rodape contendo p**************************************************************************/
-
-footer#rodape p,
 footer#rodape a {
-    color: #2574a9;
-    text-align: center;
     font-family: "Computer-font";
     color: #2574a9;
     text-decoration: none;
-}
-
-footer#rodape a:hover {
-    text-decoration: underline;
 }
 
 /* MINIMIZAR
@@ -271,8 +312,8 @@ footer#rodape a:hover {
     }
 
     .main-logo svg {
-        height: 25px;
-        width: 25px;
+        height: 35px;
+        width: 35px;
         fill: #2574a9
     }
 
