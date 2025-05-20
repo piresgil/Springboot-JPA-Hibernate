@@ -216,7 +216,6 @@ section#index a:hover {
 /* BD section
  **************************************************************************/
 section#index a:hover {
-
     text-decoration: underline;
 }
 
@@ -460,4 +459,42 @@ section#contacto p#descricao-contacto {
         font-size: 1em;
         color: #c5eff7
     }
+
+     section {
+        font-size: 0.4em;
+    }
+    /* portfolio section
+ **************************************************************************/
+section#portofolio p {
+    font-family: "Taxi Driver";
+    font-size: 0.3em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+
+
+/* sobre section
+ **************************************************************************/
+section#sobre p {
+    font-family: "Taxi Driver";
+    font-size: 0.3em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+/* Contacto section
+ **************************************************************************/
+section#contacto p#descricao-contacto {
+    font-family: "Taxi Driver";
+    font-size: 0.3em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
 }
