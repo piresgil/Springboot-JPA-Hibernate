@@ -22,7 +22,7 @@ import java.util.Arrays;
  * após o contexto do Spring ser inicializado.
  */
 @Configuration // Indica que esta classe é uma classe de configuração do Spring.
-@Profile("test") // Indica que esta configuração só será carregada quando o perfil "test" estiver ativo.
+@Profile("dev") // Indica que esta configuração só será carregada quando o perfil "test" estiver ativo.
 public class TestConfig implements CommandLineRunner {
 
     // Injeção de Dependências (usando @Autowired para injeção de construtor - melhor prática)
