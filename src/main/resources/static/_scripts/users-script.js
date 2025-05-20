@@ -26,14 +26,14 @@
 
             if (realJsonData && realJsonData.length > 0) {
                 let htmlTable = '<table>';
-                htmlTable += '<thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>Idade</th></tr></thead>';
+                htmlTable += '<thead><tr><th>ID</th><th>Nome</th><th>Email</th><th>password</th><th>phone</th></tr></thead>';
                 htmlTable += '<tbody>';
 
                 realJsonData.forEach(user => {
                     // ADAPTE AQUI PARA OS NOMES DAS PROPRIEDADES QUE SEU BACKEND RETORNA
                     htmlTable += `<tr>
                                     <td>${user.id}</td>
-                                    <td>${user.nome}</td>
+                                    <td>${user.name}</td>
                                     <td>${user.email}</td>
                                     <td>${user.password}</td>
                                     <td>${user.phone}</td>
