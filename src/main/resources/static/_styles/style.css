@@ -295,7 +295,7 @@ footer#rodape a {
 
 /* MINIMIZAR
  **************************************************************************/
-@media (max-width: 768px) {
+@media (max-width: 576px) {
 
     .logo {
         grid-area: lgo;
@@ -330,7 +330,40 @@ footer#rodape a {
     section {
         font-size: 1em;
     }
+/* portfolio section
+ **************************************************************************/
+section#portofolio p {
+    font-family: "Taxi Driver";
+    font-size: 0.4em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
 
+
+
+/* sobre section
+ **************************************************************************/
+section#sobre p {
+    font-family: "Taxi Driver";
+    font-size: 0.4em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+/* Contacto section
+ **************************************************************************/
+section#contacto p#descricao-contacto {
+    font-family: "Taxi Driver";
+    font-size: 0.4em;
+    color: darkslategrey;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
     .menu {
         grid-area: mnu;
         display: grid;
