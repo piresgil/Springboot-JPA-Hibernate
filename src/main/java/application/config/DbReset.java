@@ -6,10 +6,13 @@ package application.config;
 import application.entities.*;
 import application.entities.enums.OrderStatus;
 import application.repositories.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
+import org.springframework.transaction.annotation.Transactional; // Manter @Transactional
 
 import java.time.Instant;
 import java.util.Arrays;
@@ -22,8 +25,8 @@ import java.util.Arrays;
  * após o contexto do Spring ser inicializado.
  */
 @Configuration // Indica que esta classe é uma classe de configuração do Spring.
-@Profile("test") // Indica que esta configuração só será carregada quando o perfil "test" estiver ativo.
-public class TestConfig implements CommandLineRunner {
+// @Profile("dev") // Indica que esta configuração só será carregada quando o perfil "dev" estiver ativo.
+public class DbReset implements CommandLineRunner {
 
     // Injeção de Dependências (usando @Autowired para injeção de construtor - melhor prática)
     private final UserRepository userRepository;
@@ -33,7 +36,7 @@ public class TestConfig implements CommandLineRunner {
     private final OrderItemRepository orderItemRepository;
 
     @Autowired
-    public TestConfig(UserRepository userRepository, OrderRepository orderRepository, CategoryRepository categoryRepository, ProductRepository productRepository, OrderItemRepository orderItemRepository) {
+    public DbReset(UserRepository userRepository, OrderRepository orderRepository, CategoryRepository categoryRepository, ProductRepository productRepository, OrderItemRepository orderItemRepository) {
         this.userRepository = userRepository;
         this.orderRepository = orderRepository;
         this.categoryRepository = categoryRepository;
@@ -41,16 +44,45 @@ public class TestConfig implements CommandLineRunner {
         this.orderItemRepository = orderItemRepository;
     }
 
+    // Injeção do EntityManager para executar comandos SQL nativos
+    @PersistenceContext
+    private EntityManager entityManager;
     /**
      * Método run() da interface CommandLineRunner.
      * Este método é executado automaticamente pelo Spring quando a aplicação é iniciada
-     * com o perfil "test".  Ele contém a lógica para criar e salvar os dados de teste no banco.
+     * com o perfil "test". Ele contém a lógica para criar e salvar os dados de teste no banco.
      *
      * @param args Argumentos da linha de comando (não utilizados neste caso).
      * @throws Exception Pode lançar exceções durante a execução (tratadas pelo Spring).
      */
     @Override
+    @Transactional // Manter @Transactional para o método run()
     public void run(String... args) throws Exception {
+
+        // ====================================================================================
+        // PASSO 1: LIMPAR E REINICIAR AS SEQUÊNCIAS DE IDs DO BANCO DE DADOS
+        // Usamos TRUNCATE TABLE ... RESTART IDENTITY CASCADE para:
+        // 1. Apagar todos os dados da tabela.
+        // 2. Reiniciar a sequência de IDs (auto-incremento) para 1.
+        // 3. CASCADE: Apaga também os dados de tabelas que têm chaves estrangeiras que referenciam esta tabela.
+        // A ordem é importante para evitar problemas de chaves estrangeiras:
+        // Começamos pelas tabelas "filhas" (que dependem de outras) e vamos para as "mães".
+        // ====================================================================================
+
+        // Truncar a tabela de junção ManyToMany primeiro
+        // O nome da tabela de junção é geralmente gerado pelo Hibernate (ex: nome_da_tabela_pai_nome_da_tabela_filha)
+        // Se a sua tabela de junção tiver um nome diferente, ajuste-o aqui.
+        // Assumindo que o nome da tabela de junção é tb_product_categories, ajuste se for diferente.
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_category RESTART IDENTITY CASCADE").executeUpdate();
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_order RESTART IDENTITY CASCADE").executeUpdate();
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_order_item RESTART IDENTITY CASCADE").executeUpdate();
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_payment RESTART IDENTITY CASCADE").executeUpdate();
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_product RESTART IDENTITY CASCADE").executeUpdate();
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_product_category RESTART IDENTITY CASCADE").executeUpdate();
+        entityManager.createNativeQuery("TRUNCATE TABLE tb_user RESTART IDENTITY CASCADE").executeUpdate();
+
+
+
 
         // Criação de instâncias de User (Usuário)
         User u1 = new User(null, "Maria Brown", "maria@gmail.com", "988888888", "123456");

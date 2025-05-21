@@ -325,44 +325,6 @@ footer#rodape a {
         grid-auto-columns: auto 1fr auto;
     }
 
-
-    section {
-        font-size: 1em;
-    }
-/* portfolio section
- **************************************************************************/
-section#portofolio p {
-    font-family: "Taxi Driver";
-    font-size: 0.4em;
-    color: darkslategrey;
-    padding-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-
-
-/* sobre section
- **************************************************************************/
-section#sobre p {
-    font-family: "Taxi Driver";
-    font-size: 0.4em;
-    color: darkslategrey;
-    padding-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
-
-/* Contacto section
- **************************************************************************/
-section#contacto p#descricao-contacto {
-    font-family: "Taxi Driver";
-    font-size: 0.4em;
-    color: darkslategrey;
-    padding-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
-}
     .menu {
         grid-area: mnu;
         display: grid;
@@ -460,6 +422,7 @@ section#contacto p#descricao-contacto {
         color: #c5eff7
     }
 
+    
      section {
         font-size: 0.4em;
     }
@@ -467,11 +430,11 @@ section#contacto p#descricao-contacto {
  **************************************************************************/
 section#portofolio p {
     font-family: "Taxi Driver";
-    font-size: 0.3em;
+    font-size: 0.35em;
     color: darkslategrey;
     padding-top: 10px;
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 
@@ -480,7 +443,7 @@ section#portofolio p {
  **************************************************************************/
 section#sobre p {
     font-family: "Taxi Driver";
-    font-size: 0.3em;
+    font-size: 0.35em;
     color: darkslategrey;
     padding-top: 10px;
     padding-left: 40px;
