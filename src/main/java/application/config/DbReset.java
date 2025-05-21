@@ -25,7 +25,7 @@ import java.util.Arrays;
  * após o contexto do Spring ser inicializado.
  */
 @Configuration // Indica que esta classe é uma classe de configuração do Spring.
-// @Profile("dev") // Indica que esta configuração só será carregada quando o perfil "dev" estiver ativo.
+@Profile("test") // Indica que esta configuração só será carregada quando o perfil "dev" estiver ativo.
 public class DbReset implements CommandLineRunner {
 
     // Injeção de Dependências (usando @Autowired para injeção de construtor - melhor prática)

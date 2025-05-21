@@ -21,6 +21,13 @@
  **************************************************************************/
 li {
     list-style: none;
+    
+}
+/* Estilo ao passar o mouse (hover) */
+li:hover {
+    font-size: 1.1em; /* Aumenta a fonte em 10% (ajuste o valor conforme necessário) */
+    /* Opcional: Um pequeno aumento de escala para um efeito mais dinâmico */
+    transform: scale(1.02);
 }
 
 /* a
@@ -99,66 +106,70 @@ svg#lettring {
 /* Barra/Menu de navegação
  **************************************************************************/
 
+/* Estilo para a barra de navegação principal */
 .nav-bar {
-    grid-area: nav;
-    display: grid;
-    align-content: center;
+    grid-area: nav; /* Define esta área dentro de um layout de grid, nomeando-a como 'nav' */
+    display: grid; /* Ativa o layout de grid para os itens dentro da nav-bar */
+    align-content: center; /* Alinha o conteúdo da grid verticalmente ao centro */
 }
 
+/* Estilo para os links dentro da barra de navegação */
 .nav-bar a {
-    position: relative;
-    font-family: "Taxi Driver";
-    text-transform: uppercase;
-    transition: all 0.4s ease-out;
+    position: relative; /* Define a posição relativa para permitir posicionamento absoluto de pseudo-elementos */
+    font-family: "Taxi Driver"; /* Define a fonte para os links */
+    text-transform: uppercase; /* Transforma o texto dos links para maiúsculas */
+    transition: all 0.4s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.4 segundos */
 }
 
+/* Estilo para links dentro de uma nav-bar com a classe 'max-nav' */
 .max-nav a {
-    font-size: 1em;
-    color: #c5eff7
+    font-size: 1em; /* Define o tamanho da fonte como 1em (tamanho padrão) */
+    color: #c5eff7; /* Define a cor do texto dos links */
 }
 
-
-
+/* Estilo para a lista não ordenada dentro da barra de navegação */
 .nav-bar ul {
-    display: grid;
-    grid-auto-flow: column;
-    grid-gap: 20px;
+    display: grid; /* Ativa o layout de grid para os itens da lista */
+    grid-auto-flow: column; /* Organiza os itens da grid em colunas (horizontalmente) */
+    grid-gap: 20px; /* Define um espaçamento de 20px entre os itens da grid */
 }
 
-
-
+/* Estilo para o pseudo-elemento ::before dos links da nav-bar */
 .nav-bar a::before {
-    content: "";
-    position: absolute;
-    top: -10px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    transform-origin: left;
-    transform: scaleX(0);
-    transition: all 0.2s ease-out;
+    content: ""; /* Conteúdo vazio para exibir o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto em relação ao link pai */
+    top: -10px; /* Posição 10px acima do topo do link */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Ocupa 100% da largura do link */
+    height: 2px; /* Altura de 2px (cria uma linha) */
+    background-color: currentColor; /* A cor de fundo é a mesma cor do texto do link */
+    transform-origin: left; /* Define o ponto de origem da transformação para a esquerda */
+    transform: scaleX(0); /* Inicialmente, a linha está invisível (escala horizontal 0) */
+    transition: all 0.2s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
 }
 
+/* Estilo para o pseudo-elemento ::before quando o mouse passa sobre o link */
 .nav-bar a:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
 }
 
+/* Estilo para o pseudo-elemento ::after quando o mouse passa sobre o link */
 .nav-bar a:hover::after {
-    transform: scaleX(1);
+    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
 }
 
+/* Estilo para o pseudo-elemento ::after dos links da nav-bar */
 .nav-bar a::after {
-    content: "";
-    position: absolute;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: currentColor;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: all 0.2s ease-out;
+    content: ""; /* Conteúdo vazio para exibir o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto em relação ao link pai */
+    bottom: -10px; /* Posição 10px abaixo da parte inferior do link */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Ocupa 100% da largura do link */
+    height: 2px; /* Altura de 2px (cria uma linha) */
+    background-color: currentColor; /* A cor de fundo é a mesma cor do texto do link */
+    transform-origin: right; /* Define o ponto de origem da transformação para a direita */
+    transform: scaleX(0); /* Inicialmente, a linha está invisível (escala horizontal 0) */
+    transition: all 0.2s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
 }
 
 
@@ -215,8 +226,16 @@ section#index a:hover {
 
 /* BD section
  **************************************************************************/
-section#index a:hover {
-    text-decoration: underline;
+section#db a {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    font-family: "Computer-font";
+    text-align: center;
+    font-size: 0.8em;
+    padding-top: 10px;
+    padding-left: 100px;
+    padding-right: 100px;
 }
 
 /* portfolio section
@@ -230,15 +249,12 @@ section#portofolio p {
     padding-right: 100px;
 }
 
-
-
 /* sobre section
  **************************************************************************/
 section#sobre p {
     font-family: "Taxi Driver";
     font-size: 0.5em;
     color: darkslategrey;
-    padding-top: 10px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -422,42 +438,44 @@ footer#rodape a {
         color: #c5eff7
     }
 
-    
-     section {
+
+    section {
         font-size: 0.4em;
     }
+
+
     /* portfolio section
  **************************************************************************/
-section#portofolio p {
-    font-family: "Taxi Driver";
-    font-size: 0.35em;
-    color: darkslategrey;
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
+    section#portofolio p {
+        font-family: "Taxi Driver";
+        font-size: 0.35em;
+        color: darkslategrey;
+        padding-top: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 
 
 
-/* sobre section
+    /* sobre section
  **************************************************************************/
-section#sobre p {
-    font-family: "Taxi Driver";
-    font-size: 0.35em;
-    color: darkslategrey;
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
+    section#sobre p {
+        font-family: "Taxi Driver";
+        font-size: 0.35em;
+        color: darkslategrey;
+        padding-top: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 
-/* Contacto section
+    /* Contacto section
  **************************************************************************/
-section#contacto p#descricao-contacto {
-    font-family: "Taxi Driver";
-    font-size: 0.3em;
-    color: darkslategrey;
-    padding-top: 10px;
-    padding-left: 40px;
-    padding-right: 40px;
-}
+    section#contacto p#descricao-contacto {
+        font-family: "Taxi Driver";
+        font-size: 0.3em;
+        color: darkslategrey;
+        padding-top: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
 }

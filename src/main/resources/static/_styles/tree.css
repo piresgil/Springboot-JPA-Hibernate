@@ -7,6 +7,7 @@ ul.tree,
     cursor: pointer;
     padding-top: 10px;
 }
+
 .tree li {
     display: grid;
     align-items: center; /* Centraliza os itens flex (o link) verticalmente */
@@ -32,4 +33,57 @@ ul.tree,
     line-height: 1.5;
     padding-top: 0;
     /* Outros estilos do link */
+}
+
+/* Garante que o span se comporta como um bloco com largura do conteúdo */
+/* Esta regra deve vir ANTES das regras dos pseudo-elementos para que o posicionamento absoluto funcione corretamente */
+.tree span {
+    position: relative; /* Necessário para posicionar os pseudo-elementos ::before e ::after */
+    display: inline-block; /* Faz o span se comportar como um bloco, mas na linha, ajustando sua largura ao conteúdo */
+    /* Adicione aqui qualquer estilo base para o span, como padding, cor do texto, etc. */
+}
+/* Estilo para o pseudo-elemento ::before dos spans dentro de .tree */
+.tree span::before {
+    content: ""; /* Conteúdo vazio para exibir o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto em relação ao span pai */
+    top: 1.3em; /* Posição ajustada para ficar mais próxima do topo do span */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Ocupa 100% da largura do span */
+    height: 2px; /* Altura de 2px (cria uma linha) */
+    background-color: currentColor; /* A cor de fundo é a mesma cor do texto do span */
+    transform-origin: left; /* Define o ponto de origem da transformação para a esquerda */
+    transform: scaleX(0); /* Inicialmente, a linha está invisível (escala horizontal 0) */
+    transition: all 0.2s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
+}
+
+/* Estilo para o pseudo-elemento ::before quando o mouse passa sobre o span OU quando o menu está ativo */
+.tree span:hover::before,
+.tree span.active-menu::before { /* <-- Adição da classe 'active-menu' aqui */
+    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
+}
+
+/* Estilo para o pseudo-elemento ::after quando o mouse passa sobre o span OU quando o menu está ativo */
+.tree span:hover::after,
+.tree span.active-menu::after { /* <-- Adição da classe 'active-menu' aqui */
+    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
+}
+
+/* Estilo para o pseudo-elemento ::after dos spans dentro de .tree */
+.tree span::after {
+    content: ""; /* Conteúdo vazio para exibir o pseudo-elemento */
+    position: absolute; /* Posicionamento absoluto em relação ao span pai */
+    bottom: 1.3em; /* Posição ajustada para ficar mais próxima da parte inferior do span */
+    left: 0; /* Alinhado à esquerda */
+    width: 100%; /* Ocupa 100% da largura do span */
+    height: 2px; /* Altura de 2px (cria uma linha) */
+    background-color: currentColor; /* A cor de fundo é a mesma cor do texto do span */
+    transform-origin: right; /* Define o ponto de origem da transformação para a direita */
+    transform: scaleX(0); /* Inicialmente, a linha está invisível (escala horizontal 0) */
+    transition: all 0.2s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
+}
+
+/* Garante que o span se comporta como um bloco com largura do conteúdo */
+.tree span {
+    position: relative; /* Necessário para posicionar os pseudo-elementos */
+    display: inline-block; /* Faz o span se comportar como um bloco, mas na linha, ajustando sua largura ao conteúdo */
 }
