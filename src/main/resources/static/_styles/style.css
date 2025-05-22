@@ -308,11 +308,18 @@ section#sobre p {
  **************************************************************************/
 section#contacto p#descricao-contacto {
     font-family: "Taxi Driver";
-    font-size: 0.5em;
+    font-size: 1em;
     color: darkslategrey;
-    padding-top: 10px;
+    padding-top: 50px;
     padding-left: 100px;
     padding-right: 100px;
+}
+
+section#contacto a {
+    font-family: "Taxi Driver";
+    font-size: 1em;
+    color: #2574a9;
+    padding-bottom: 100px;
 }
 
 section#contacto a:hover {
@@ -534,7 +541,7 @@ footer#rodape a {
  **************************************************************************/
     section#contacto p#descricao-contacto {
         font-family: "Taxi Driver";
-        font-size: 0.3em;
+        font-size: 0.5em;
         color: darkslategrey;
         padding-left: 40px;
         padding-right: 40px;

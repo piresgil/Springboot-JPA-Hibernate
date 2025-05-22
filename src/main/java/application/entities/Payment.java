@@ -17,7 +17,6 @@ import java.util.Objects;
 @Entity
 @Table(name = "tb_payment")
 public class Payment implements Serializable {
-
     private static final long serialVersionUID = 1L;
 
     /**
@@ -111,6 +110,10 @@ public class Payment implements Serializable {
      */
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public Long getOrderId() {
+        return order != null ? order.getId() : null;
     }
 
     /**
