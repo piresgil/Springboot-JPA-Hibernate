@@ -25,24 +25,23 @@
             formattedDataContainer.innerHTML = '';
 
 
-            if (realJsonData && realJsonData.length > 0) {
-                let htmlTable = '<table>';
-                htmlTable += '<thead><tr><th>ID</th><th>Data</th><th>Estado de Pedido</th><th>ID Cliente</th></thead>';
-                htmlTable += '<tbody>';
+           if (realJsonData && realJsonData.length > 0) {
+               let htmlTable = '<table>';
+               htmlTable += '<thead><tr><th>ID</th><th>Data</th><th>Estado de Pedido</th><th>ID Cliente</th></tr></thead>';
+               htmlTable += '<tbody>';
 
-                realJsonData.forEach(order => {
-                    // ADAPTE AQUI PARA OS NOMES DAS PROPRIEDADES QUE SEU BACKEND RETORNA
-                    htmlTable += `<tr>
-                                    <td>${order.id}</td>
-                                    <td>${order.moment}</td>
-                                    <td>${order.order_status}</td>
-                                    <td>${order.client_id}</td>
-                                  </tr>`;
-                });
+               realJsonData.forEach(order => {
+                   htmlTable += `<tr>
+                                   <td>${order.id}</td>
+                                   <td>${order.moment}</td>
+                                   <td>${orderStatusMap[order.orderStatus] ?? order.orderStatus}</td>
+                                   <td>${order.client.id} - ${order.client.name}</td>
+                                 </tr>`;
+               });
 
-                htmlTable += '</tbody></table>';
-                formattedDataContainer.innerHTML = htmlTable;
-            } else {
+               htmlTable += '</tbody></table>';
+               formattedDataContainer.innerHTML = htmlTable;
+           }  else {
                 formattedDataContainer.innerHTML = '<p>Nenhum Pedido encontrado.</p>';
             }
 
