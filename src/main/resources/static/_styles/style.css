@@ -64,6 +64,7 @@ header {
     height: 60px;
 }
 
+
 /*Conteiner
  **************************************************************************/
 .conteiner {
@@ -354,7 +355,24 @@ footer#rodape a {
 
 /* MINIMIZAR
  **************************************************************************/
-@media (max-width: 576px) {
+@media (max-width: 500px) {
+
+    .main-content {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        /* ← importante */
+    }
+
+    section {
+        display: block;
+        width: 100%;
+        clear: both;
+        padding: 10px;
+        position: relative;
+        /* ou remova position:absolute se existir */
+        float: none;
+    }
 
     .logo {
         grid-area: lgo;

@@ -89,7 +89,7 @@ ul.tree,
 }
 
 
-@media (max-width: 576px) {
+@media (max-width: 480px) {
 
 .tree li h1 {
     position: relative;
