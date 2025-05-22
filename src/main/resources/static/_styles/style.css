@@ -287,7 +287,7 @@ section#db a:visited {
  **************************************************************************/
 section#portofolio p {
     font-family: "Taxi Driver";
-    font-size: 0.5em;
+    font-size: 0.7em;
     color: darkslategrey;
     padding-top: 10px;
     padding-left: 100px;
@@ -298,7 +298,7 @@ section#portofolio p {
  **************************************************************************/
 section#sobre p {
     font-family: "Taxi Driver";
-    font-size: 0.5em;
+    font-size: 0.6em;
     color: darkslategrey;
     padding-left: 100px;
     padding-right: 100px;
@@ -517,7 +517,7 @@ footer#rodape a {
  **************************************************************************/
     section#portofolio p {
         font-family: "Taxi Driver";
-        font-size: 0.35em;
+        font-size: 0.5em;
         color: darkslategrey;
         padding-top: 10px;
         padding-left: 40px;
@@ -530,7 +530,7 @@ footer#rodape a {
  **************************************************************************/
     section#sobre p {
         font-family: "Taxi Driver";
-        font-size: 0.35em;
+        font-size: 0.4em;
         color: darkslategrey;
         padding-top: 10px;
         padding-left: 40px;

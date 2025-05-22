@@ -30,12 +30,12 @@
                      htmlTable += '<thead><tr><th>ID</th><th>Data</th><th>Status</th><th>Cliente</th></tr></thead><tbody>';
 
                      realJsonData.forEach(order => {
-                         htmlTable += `<tr>
-                                         <td>${order.id ??}</td>
-                                         <td>${order.moment ??}</td>
-                                         <td>${order.orderStatus ??}</td>
-                                         <td>${order.client?.id ??}, ${order.client?.name ??}</td>
-                                       </tr>`;
+                        htmlTable += `<tr>
+                                   <td>${order.id ?? 'N/A'}</td>
+                                   <td>${order.moment ?? 'N/A'}</td>
+                                   <td>${order.orderStatus ?? 'N/A'}</td>
+                                   <td>${order.client?.id ?? 'N/A'}, ${order.client?.name ?? 'N/A'}</td>
+                               </tr>`;
                      });
 
                htmlTable += '</tbody></table>';
