@@ -9,18 +9,139 @@
      font-family: "Computer-font";
  }
 
-/* li
+ #footer {
+     /* Aqui você coloca as suas propriedades CSS */
+     color: #2574a9;
+     /* Exemplo: cor do texto cinza */
+     text-align: right;
+     /* Exemplo: texto centralizado */
+     padding-top: 50px;
+     /* Exemplo: preenchimento */
+     font-size: 0.9em;
+     /* Exemplo: tamanho da fonte ligeiramente menor */
+ }
+
+ /* Estilo para a barra de navegação principal */
+ .nav-bar {
+     grid-area: nav;
+     display: flex;
+     align-content: center;
+     overflow-x: hidden;
+     /* <-- AQUI: Esconde qualquer barra de scroll horizontal dentro da nav-bar */
+     /* width: 100%; */
+     /* Garanta que a nav-bar tem uma largura definida ou máxima, por exemplo: */
+     /* max-width: 100%; */
+ }
+
+ /* Estilo para a lista não ordenada (o contentor dos <li>) */
+ ul {
+     list-style: none;
+     /* Remove os marcadores padrão da lista */
+     padding: 0;
+     /* Remove o padding padrão da lista */
+     margin: 0;
+     /* Remove a margem padrão da lista */
+     gap: 20px;
+     /* Adiciona espaçamento entre os itens (alternativa a margin-right em cada li) */
+     /* Outras propriedades flexbox úteis: */
+     justify-content: center;
+     /* Centraliza os itens horizontalmente */
+     align-items: center;
+     /* Centraliza os itens verticalmente (se houver alturas diferentes) */
+     font-size: 15px;
+     padding-top: 25px;
+       /* >>> ADIÇÃO CRÍTICA AQUI: Esconde qualquer conteúdo que transborde e remove as barras de scroll */
+    overflow: hidden; 
+ }
+
+ /* li
  **************************************************************************/
-li {
-    list-style: none;
-    
+ li {
+     list-style: none;
+ }
+
+ /* Estilo ao passar o mouse (hover) */
+ li:hover {
+     font-size: 1.1em;
+     /* Aumenta a fonte em 10% (ajuste o valor conforme necessário) */
+     /* Opcional: Um pequeno aumento de escala para um efeito mais dinâmico */
+     transform: scale(1.02);
+ }
+
+ li a {
+     text-decoration: none;
+     /* Para remover o sublinhado */
+     color: #2574a9;
+ }
+
+ li a:visited {
+     color: #2574a9;
+ }
+.nav-bar a {
+    position: relative; /* <-- NECESSÁRIO para conter os pseudo-elementos */
 }
-/* Estilo ao passar o mouse (hover) */
-li:hover {
-    font-size: 1.1em; /* Aumenta a fonte em 10% (ajuste o valor conforme necessário) */
-    /* Opcional: Um pequeno aumento de escala para um efeito mais dinâmico */
-    transform: scale(1.02);
-}
+
+ /* Estilo para o pseudo-elemento ::before dos links da nav-bar */
+ .nav-bar a::before {
+     content: "";
+     /* Conteúdo vazio para exibir o pseudo-elemento */
+     position: absolute;
+     /* Posicionamento absoluto em relação ao link pai */
+     top: -2px;
+     /* Posição 10px acima do topo do link */
+     left: 0;
+     /* Alinhado à esquerda */
+     width: 100%;
+     /* Ocupa 100% da largura do link */
+     height: 2px;
+     /* Altura de 2px (cria uma linha) */
+     background-color: currentColor;
+     /* A cor de fundo é a mesma cor do texto do link */
+     transform-origin: left;
+     /* Define o ponto de origem da transformação para a esquerda */
+     transform: scaleX(0);
+     /* Inicialmente, a linha está invisível (escala horizontal 0) */
+     transition: all 0.2s ease-out;
+     /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
+ }
+
+ /* Estilo para o pseudo-elemento ::before quando o mouse passa sobre o link */
+ .nav-bar a:hover::before {
+     transform: scaleX(1);
+     /* Faz a linha aparecer (escala horizontal 1) */
+ }
+
+ /* Estilo para o pseudo-elemento ::after quando o mouse passa sobre o link */
+ .nav-bar a:hover::after {
+     transform: scaleX(1);
+     /* Faz a linha aparecer (escala horizontal 1) */
+ }
+
+ /* Estilo para o pseudo-elemento ::after dos links da nav-bar */
+ .nav-bar a::after {
+     content: "";
+     /* Conteúdo vazio para exibir o pseudo-elemento */
+     position: absolute;
+     /* Posicionamento absoluto em relação ao link pai */
+     bottom: -1px;
+     /* Posição 10px abaixo da parte inferior do link */
+     left: 0;
+     /* Alinhado à esquerda */
+     width: 100%;
+     /* Ocupa 100% da largura do link */
+     height: 2px;
+     /* Altura de 2px (cria uma linha) */
+     background-color: currentColor;
+     /* A cor de fundo é a mesma cor do texto do link */
+     transform-origin: right;
+     /* Define o ponto de origem da transformação para a direita */
+     transform: scaleX(0);
+     /* Inicialmente, a linha está invisível (escala horizontal 0) */
+     transition: all 0.2s ease-out;
+     /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
+ }
+
+
 
  body {
      font-family: Arial, sans-serif;
@@ -30,9 +151,17 @@ li:hover {
  }
 
  h1 {
+     font-family: "Computer-font";
      color: #2574a9;
      text-align: center;
+     font-size: 4.5em;
  }
+
+ h2 {
+     font-family: "Taxi Driver";
+     font-size: 2em;
+ }
+
 
  #users-data-container {
      background-color: #fff;

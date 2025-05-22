@@ -21,11 +21,13 @@
  **************************************************************************/
 li {
     list-style: none;
-    
+
 }
+
 /* Estilo ao passar o mouse (hover) */
 li:hover {
-    font-size: 1.1em; /* Aumenta a fonte em 10% (ajuste o valor conforme necessário) */
+    font-size: 1.1em;
+    /* Aumenta a fonte em 10% (ajuste o valor conforme necessário) */
     /* Opcional: Um pequeno aumento de escala para um efeito mais dinâmico */
     transform: scale(1.02);
 }
@@ -108,68 +110,102 @@ svg#lettring {
 
 /* Estilo para a barra de navegação principal */
 .nav-bar {
-    grid-area: nav; /* Define esta área dentro de um layout de grid, nomeando-a como 'nav' */
-    display: grid; /* Ativa o layout de grid para os itens dentro da nav-bar */
-    align-content: center; /* Alinha o conteúdo da grid verticalmente ao centro */
+    grid-area: nav;
+    /* Define esta área dentro de um layout de grid, nomeando-a como 'nav' */
+    display: grid;
+    /* Ativa o layout de grid para os itens dentro da nav-bar */
+    align-content: center;
+    /* Alinha o conteúdo da grid verticalmente ao centro */
 }
 
 /* Estilo para os links dentro da barra de navegação */
 .nav-bar a {
-    position: relative; /* Define a posição relativa para permitir posicionamento absoluto de pseudo-elementos */
-    font-family: "Taxi Driver"; /* Define a fonte para os links */
-    text-transform: uppercase; /* Transforma o texto dos links para maiúsculas */
-    transition: all 0.4s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.4 segundos */
+    position: relative;
+    /* Define a posição relativa para permitir posicionamento absoluto de pseudo-elementos */
+    font-family: "Taxi Driver";
+    /* Define a fonte para os links */
+    text-transform: uppercase;
+    /* Transforma o texto dos links para maiúsculas */
+    transition: all 0.4s ease-out;
+    /* Adiciona uma transição suave para todas as propriedades em 0.4 segundos */
 }
 
 /* Estilo para links dentro de uma nav-bar com a classe 'max-nav' */
 .max-nav a {
-    font-size: 1em; /* Define o tamanho da fonte como 1em (tamanho padrão) */
-    color: #c5eff7; /* Define a cor do texto dos links */
+    font-size: 1em;
+    /* Define o tamanho da fonte como 1em (tamanho padrão) */
+    color: #c5eff7;
+    /* Define a cor do texto dos links */
 }
 
 /* Estilo para a lista não ordenada dentro da barra de navegação */
 .nav-bar ul {
-    display: grid; /* Ativa o layout de grid para os itens da lista */
-    grid-auto-flow: column; /* Organiza os itens da grid em colunas (horizontalmente) */
-    grid-gap: 20px; /* Define um espaçamento de 20px entre os itens da grid */
+    display: grid;
+    /* Ativa o layout de grid para os itens da lista */
+    grid-auto-flow: column;
+    /* Organiza os itens da grid em colunas (horizontalmente) */
+    grid-gap: 20px;
+    /* Define um espaçamento de 20px entre os itens da grid */
 }
 
 /* Estilo para o pseudo-elemento ::before dos links da nav-bar */
 .nav-bar a::before {
-    content: ""; /* Conteúdo vazio para exibir o pseudo-elemento */
-    position: absolute; /* Posicionamento absoluto em relação ao link pai */
-    top: -10px; /* Posição 10px acima do topo do link */
-    left: 0; /* Alinhado à esquerda */
-    width: 100%; /* Ocupa 100% da largura do link */
-    height: 2px; /* Altura de 2px (cria uma linha) */
-    background-color: currentColor; /* A cor de fundo é a mesma cor do texto do link */
-    transform-origin: left; /* Define o ponto de origem da transformação para a esquerda */
-    transform: scaleX(0); /* Inicialmente, a linha está invisível (escala horizontal 0) */
-    transition: all 0.2s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
+    content: "";
+    /* Conteúdo vazio para exibir o pseudo-elemento */
+    position: absolute;
+    /* Posicionamento absoluto em relação ao link pai */
+    top: -10px;
+    /* Posição 10px acima do topo do link */
+    left: 0;
+    /* Alinhado à esquerda */
+    width: 100%;
+    /* Ocupa 100% da largura do link */
+    height: 2px;
+    /* Altura de 2px (cria uma linha) */
+    background-color: currentColor;
+    /* A cor de fundo é a mesma cor do texto do link */
+    transform-origin: left;
+    /* Define o ponto de origem da transformação para a esquerda */
+    transform: scaleX(0);
+    /* Inicialmente, a linha está invisível (escala horizontal 0) */
+    transition: all 0.2s ease-out;
+    /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
 }
 
 /* Estilo para o pseudo-elemento ::before quando o mouse passa sobre o link */
 .nav-bar a:hover::before {
-    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
+    transform: scaleX(1);
+    /* Faz a linha aparecer (escala horizontal 1) */
 }
 
 /* Estilo para o pseudo-elemento ::after quando o mouse passa sobre o link */
 .nav-bar a:hover::after {
-    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
+    transform: scaleX(1);
+    /* Faz a linha aparecer (escala horizontal 1) */
 }
 
 /* Estilo para o pseudo-elemento ::after dos links da nav-bar */
 .nav-bar a::after {
-    content: ""; /* Conteúdo vazio para exibir o pseudo-elemento */
-    position: absolute; /* Posicionamento absoluto em relação ao link pai */
-    bottom: -10px; /* Posição 10px abaixo da parte inferior do link */
-    left: 0; /* Alinhado à esquerda */
-    width: 100%; /* Ocupa 100% da largura do link */
-    height: 2px; /* Altura de 2px (cria uma linha) */
-    background-color: currentColor; /* A cor de fundo é a mesma cor do texto do link */
-    transform-origin: right; /* Define o ponto de origem da transformação para a direita */
-    transform: scaleX(0); /* Inicialmente, a linha está invisível (escala horizontal 0) */
-    transition: all 0.2s ease-out; /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
+    content: "";
+    /* Conteúdo vazio para exibir o pseudo-elemento */
+    position: absolute;
+    /* Posicionamento absoluto em relação ao link pai */
+    bottom: -10px;
+    /* Posição 10px abaixo da parte inferior do link */
+    left: 0;
+    /* Alinhado à esquerda */
+    width: 100%;
+    /* Ocupa 100% da largura do link */
+    height: 2px;
+    /* Altura de 2px (cria uma linha) */
+    background-color: currentColor;
+    /* A cor de fundo é a mesma cor do texto do link */
+    transform-origin: right;
+    /* Define o ponto de origem da transformação para a direita */
+    transform: scaleX(0);
+    /* Inicialmente, a linha está invisível (escala horizontal 0) */
+    transition: all 0.2s ease-out;
+    /* Adiciona uma transição suave para todas as propriedades em 0.2 segundos */
 }
 
 
@@ -226,6 +262,10 @@ section#index a:hover {
 
 /* BD section
  **************************************************************************/
+section#db ul {
+    padding: 25px;
+}
+
 section#db a {
     display: grid;
     justify-content: center;
@@ -236,6 +276,10 @@ section#db a {
     padding-top: 10px;
     padding-left: 100px;
     padding-right: 100px;
+}
+
+section#db a:visited {
+    color: #2574a9;
 }
 
 /* portfolio section
@@ -474,7 +518,6 @@ footer#rodape a {
         font-family: "Taxi Driver";
         font-size: 0.3em;
         color: darkslategrey;
-        padding-top: 10px;
         padding-left: 40px;
         padding-right: 40px;
     }

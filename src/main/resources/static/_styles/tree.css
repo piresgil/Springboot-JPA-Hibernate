@@ -87,3 +87,39 @@ ul.tree,
     position: relative; /* Necessário para posicionar os pseudo-elementos */
     display: inline-block; /* Faz o span se comportar como um bloco, mas na linha, ajustando sua largura ao conteúdo */
 }
+
+
+@media (max-width: 576px) {
+
+.tree li h1 {
+    position: relative;
+    /* Necessário para posicionar os ::before e ::after */
+    text-decoration: none;
+    /* Remove o sublinhado padrão */
+    color: #2574a9;    
+    font-size:0.8em;
+}
+
+/* Estilo para o pseudo-elemento ::before dos spans dentro de .tree */
+.tree span::before {
+    top: 1em; /* Posição ajustada para ficar mais próxima do topo do span */
+}
+
+/* Estilo para o pseudo-elemento ::before quando o mouse passa sobre o span OU quando o menu está ativo */
+.tree span:hover::before,
+.tree span.active-menu::before { /* <-- Adição da classe 'active-menu' aqui */
+    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
+}
+
+/* Estilo para o pseudo-elemento ::after quando o mouse passa sobre o span OU quando o menu está ativo */
+.tree span:hover::after,
+.tree span.active-menu::after { /* <-- Adição da classe 'active-menu' aqui */
+    transform: scaleX(1); /* Faz a linha aparecer (escala horizontal 1) */
+}
+
+/* Estilo para o pseudo-elemento ::after dos spans dentro de .tree */
+.tree span::after {
+    bottom: 1em; /* Posição ajustada para ficar mais próxima da parte inferior do span */
+}
+
+}
