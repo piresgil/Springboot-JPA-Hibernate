@@ -3,7 +3,7 @@
 ![Bibliotecas](https://img.shields.io/badge/Libraries-Maven%2C%20Spring%20Boot%2C%20JPA%2C%20Hibernate%2C%20H2-6f42c1)
  
 
-![Status](https://img.shields.io/badge/status-estável-brightgreen)
+![Status](https://img.shields.io/badge/status-em%20progresso-lightgrey)
 
 @author Daniel Gil
 
@@ -11,7 +11,8 @@
 
 *** Projeto didático ***
 
-Pequeno sistema Web Spring Boot/Maven, com persistência no baco de dados em memória (H2) com o JPA/Hibernate.
+Pequeno sistema Web Spring Boot/Maven, com persistência no baco de dados(Postegres) JPA/Hibernate.
+foi ainda feito um frontend onde mostra a base de dados.
 
 ## Objetivos 
 - Criar projeto Spring Boot Java 
