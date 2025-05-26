@@ -9,10 +9,14 @@
 
 # Spring Boot e JPA / Hibernate
 
+https://springboot-jpa-hibernate.onrender.com
+
+
 *** Projeto didático ***
 
 Pequeno sistema Web Spring Boot/Maven, com persistência no baco de dados(Postegres) JPA/Hibernate.
-foi ainda feito um frontend onde mostra a base de dados.
+
+Foi ainda adicionado um frontend onde mostra a base de dados. alem de outros dados.
 
 ## Objetivos 
 - Criar projeto Spring Boot Java 
