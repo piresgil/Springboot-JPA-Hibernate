@@ -18,7 +18,7 @@ import java.util.Arrays;
  * Class Teste de Configuração
  * Esta classe é responsável por configurar e popular o banco de dados com dados de teste
  * quando a aplicação é iniciada com o perfil "test".
- * Ela implementa a interface CommandLineRunner, que executa o método run()
+ * Ela implementa a interface CommandLineRunner, que executa o metodo run()
  * após o contexto do Spring ser inicializado.
  */
 @Configuration // Indica que esta classe é uma classe de configuração do Spring.
@@ -42,8 +42,8 @@ public class TestConfig implements CommandLineRunner {
     }
 
     /**
-     * Método run() da interface CommandLineRunner.
-     * Este método é executado automaticamente pelo Spring quando a aplicação é iniciada
+     * Metodo run() da interface CommandLineRunner.
+     * Este metodo é executado automaticamente pelo Spring quando a aplicação é iniciada
      * com o perfil "test".  Ele contém a lógica para criar e salvar os dados de teste no banco.
      *
      * @param args Argumentos da linha de comando (não utilizados neste caso).
